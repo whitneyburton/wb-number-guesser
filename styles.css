@@ -1,0 +1,69 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  font-family: Open Sans;
+}
+
+hr {
+  width: 80%;
+}
+
+.row {
+  display: flex;
+}
+
+/* fonts */
+p {
+  color: #DD1972;
+  padding: 10px;
+  text-align: center;
+  display: inline;
+}
+.thicker {
+  font-weight: 700;
+  font-size: 70px;
+}
+.thinner {
+  font-weight: 300;
+  font-size: 70px;
+}
+.number-returned {
+  font-weight: 700;
+  font-size: 70px;
+}
+.submit-guess-button {
+  
+}
+h3 {
+    color: #DD1972;
+}
+
+
+/* left column */
+.column1 {
+  flex: 50%;
+  align-items: center;
+  background-color: #F7F7F7;
+  height: 100%;
+  padding: 20px;
+}
+.clear, .reset {
+  display: inline-block;
+}
+
+label, input {
+  display: inline-block;
+}
+
+/* right column */
+.column2 {
+  flex: 50%;
+  background-color: #404041;
+  height: 100%;
+  text-align: center;
+  padding: 20px;
+}
+
