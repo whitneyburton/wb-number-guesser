@@ -12,21 +12,19 @@
     <p class="thicker">NUMBER</p>
     <p class="thinner">GUESSER</p>
   <!-- Min/Max Range -->
-  <form>
-    <label for="maxRange">Min Range</label>
+  <form action="#">
+    <label for="minRange">Min Range</label>
      <input 
      type="number" 
-     id="guessField" 
-     class="minRange">
+     id="minRange">
     <label for="maxRange">Max Range</label>
     <input 
      type="number" 
-     id="guessField" 
-     class="maxRange">
+     id="maxRange">
     <input 
      type="submit" 
-     value="Update" 
-     class="submit">
+     value="update" 
+     class="update-range">
   </form>
 
   <!-- horizonal rule -->
@@ -36,8 +34,8 @@
   <p>The current range is 1 to 100</p>
 
   <form>
-    <label for="guessField">Guess</label>
-    <input class="submit-guess-input" type="text">
+    <label for="submit-guess-input">Guess</label>
+    <input id="submit-guess-input" type="text">
     <button class="submit-guess-button" type="submit">SUBMIT GUESS</button>
 
   <br>
