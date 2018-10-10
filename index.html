@@ -6,9 +6,9 @@
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,700" rel="stylesheet">
 </head>
 <body>
-<div class="row">
+<div class="wrapper">
 <!-- left column -->
-<section class="column1">
+<section class="left-column">
     <p class="thicker">NUMBER</p>
     <p class="thinner">GUESSER</p>
   <!-- Min/Max Range -->
@@ -31,12 +31,19 @@
   <hr>
 
   <!-- Submit Guess -->
-  <p>The current range is 1 to 100</p>
+  <div class="current-range">
+    The current range is 
+    <span class="min-entry">1</span> to 
+    <span class="max-entry">100</span></div>
 
   <form>
     <label for="submit-guess-input">Guess</label>
-    <input id="submit-guess-input" type="text">
-    <button class="submit-guess-button" type="submit">SUBMIT GUESS</button>
+    <input 
+      id="submit-guess-input" 
+      type="number">
+    <button 
+      class="submit-guess-button" type="submit">SUBMIT GUESS
+    </button>
 
   <br>
 
@@ -46,10 +53,10 @@
 </section>
 
 <!-- right column -->
-<section class="column2">
+<section class="right-column">
   <h2>You Guessed:</h2> 
-  <p class = "number-returned">25</p>
-  <h2 class="evaluation-feedback">Sorry, that is too high.</h2>
+  <p class = "number-returned"></p>
+  <h2 class="evaluation-feedback"></h2>
 </section>
 
 </div>
