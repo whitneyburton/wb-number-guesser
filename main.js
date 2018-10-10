@@ -1,10 +1,34 @@
-var numberGuessed = document.querySelectorAll('.number-returned');
+var numberGuessed = document.querySelector('.number-returned');
+var guessInput = document.querySelector('.submit-guess-input');
+var button = document.querySelector('.submit-guess-button');
 
-function submitGuess() {
-	for (var i = 0; i < 1; i++) {
-		document.querySelectorAll('.number-returned')[i].innerText = '12';
-	}
+// trying out random number checker
+var y = Math.floor(Math.random() *100 + 1);
+console.log(y);
+var x = document.getElementById("guessField").value;
+var evaluationFeedback = document.querySelector('.evaluation-feedback');
+
+
+function submitGuess(e) {
+  e.preventDefault();
+  numberGuessed.innerText = guessInput.value;
+  evaluateGuess(guessInput.value);
 };
 
-var button = document.querySelector('.submit-guess-button');
 button.addEventListener('click', submitGuess);
+
+
+
+function evalFunc() {
+  document.querySelector('.evaluation-feedback').innerText = evaluateGuess;
+};
+
+function evaluateGuess(x) {
+if (x == y) {
+  document.querySelector('.evaluation-feedback').innerText = "BOOM!";
+} else if (x > y) {
+  document.querySelector('.evaluation-feedback').innerText = "Sorry, that is too high";
+} else {
+  document.querySelector('.evaluation-feedback').innerText = "Sorry that is too low";
+}
+};
