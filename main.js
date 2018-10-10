@@ -9,8 +9,8 @@ var range = max - min;
 var randomNumber = generateRandomNumber(range, min);
 var userGuessNumber = document.getElementById("submit-guess-input").value;
 
-// console.log(randomNumber);
 
+// random number creator (based off min-max)
 function generateRandomNumber(range, min) {
 	var updatedRandomNumber = Math.floor(Math.random() * (range + 1) + min);
 	console.log(`random number has been updated to ${updatedRandomNumber}`);
@@ -26,6 +26,8 @@ updateButton.addEventListener('click', function() {
 	randomNumber = generateRandomNumber(range, min);
 });
 
+
+// submit guess button 
 var evaluationFeedback = document.querySelector('.evaluation-feedback');
 
 function submitGuess(e) {
@@ -37,17 +39,20 @@ function submitGuess(e) {
 button.addEventListener('click', submitGuess);
 
 
-
+// guess feedback statements
 function evalFunc() {
   document.querySelector('.evaluation-feedback').innerText = evaluateGuess;
 };
 
 function evaluateGuess(x) {
 if (x == randomNumber) {
-  document.querySelector('.evaluation-feedback').innerText = "BOOM!";
+  document.querySelector('.evaluation-feedback').innerText = 
+  "BOOM!";
 } else if (x > randomNumber) {
-  document.querySelector('.evaluation-feedback').innerText = "Sorry, that is too high";
+  document.querySelector('.evaluation-feedback').innerText = 
+  "Sorry, that is too high";
 } else {
-  document.querySelector('.evaluation-feedback').innerText = "Sorry that is too low";
+  document.querySelector('.evaluation-feedback').innerText = 
+  "Sorry that is too low";
 }
 };

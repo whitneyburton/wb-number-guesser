@@ -1,18 +1,20 @@
 * {
   margin: 0px;
   padding: 0px;
+  font-family: Open Sans;
 }
 
-body {
-  font-family: Open Sans;
+body, html, .wrapper {
+  height: 100%;
 }
 
 hr {
   width: 80%;
 }
 
-.row {
+.wrapper {
   display: flex;
+  flex-direction: row;
 }
 
 /* fonts */
@@ -22,6 +24,16 @@ p {
   text-align: center;
   display: inline;
 }
+.current-range {
+  color: #DD1972;
+}
+.min-entry {
+
+}
+.max-entry {
+  
+}
+
 .thicker {
   font-weight: 700;
   font-size: 70px;
@@ -34,20 +46,16 @@ p {
   font-weight: 700;
   font-size: 70px;
 }
-.submit-guess-button {
-  
-}
 h3 {
     color: #DD1972;
 }
 
 
 /* left column */
-.column1 {
-  flex: 50%;
+.left-column {
+  width: 100%;
   align-items: center;
   background-color: #F7F7F7;
-  height: 100%;
   padding: 20px;
 }
 .clear, .reset {
@@ -59,10 +67,9 @@ label, input {
 }
 
 /* right column */
-.column2 {
-  flex: 50%;
+.right-column {
   background-color: #404041;
-  height: 100%;
+  width: 100%;
   text-align: center;
   padding: 20px;
 }
