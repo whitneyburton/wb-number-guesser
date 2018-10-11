@@ -3,15 +3,12 @@
   padding: 0px;
   font-family: Open Sans;
 }
-
 body, html, .wrapper {
   height: 100%;
 }
-
 hr {
   width: 80%;
 }
-
 .wrapper {
   display: flex;
   flex-direction: row;
@@ -27,13 +24,6 @@ p {
 .current-range {
   color: #DD1972;
 }
-.min-entry {
-
-}
-.max-entry {
-  
-}
-
 .thicker {
   font-weight: 700;
   font-size: 70px;
@@ -50,7 +40,6 @@ h3 {
     color: #DD1972;
 }
 
-
 /* left column */
 .left-column {
   width: 100%;
@@ -61,7 +50,6 @@ h3 {
 .clear, .reset {
   display: inline-block;
 }
-
 label, input {
   display: inline-block;
 }

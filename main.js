@@ -1,54 +1,56 @@
 var numberGuessed = document.querySelector('.number-returned');
 var guessInput = document.querySelector('#submit-guess-input');
 var button = document.querySelector('.submit-guess-button');
-
 var min = 1;
 var max = 100;
 var range = max - min;
-
 var randomNumber = generateRandomNumber(range, min);
-var userGuessNumber = document.getElementById("submit-guess-input").value;
+var userGuessNumber = document.querySelector("#submit-guess-input");
+var minEntry = document.querySelector("#min-range").value;
+var maxEntry = document.querySelector("#max-range").value;
+var updateButton = document.querySelector('.update-range');
+var evaluationFeedback = document.querySelector('.evaluation-feedback');
 
 
-// random number creator (based off min-max)
+button.addEventListener('click', submitGuess);
+updateButton.addEventListener('click', function() {
+	min = parseInt(document.querySelector("#min-range").value);
+	max = parseInt(document.querySelector("#max-range").value);
+	range = max - min;
+	randomNumber = generateRandomNumber(range, min);
+	replaceMinMax();
+});
+
+
 function generateRandomNumber(range, min) {
 	var updatedRandomNumber = Math.floor(Math.random() * (range + 1) + min);
 	console.log(`random number has been updated to ${updatedRandomNumber}`);
 	return updatedRandomNumber;
 };
 
-var updateButton = document.querySelector('.update-range');
 
-updateButton.addEventListener('click', function() {
-	min = parseInt(document.querySelector("#minRange").value);
-	max = parseInt(document.querySelector("#maxRange").value);
-	range = max - min;
-	randomNumber = generateRandomNumber(range, min);
-});
-
+function replaceMinMax() {
+	document.querySelector('.min-entry').innerText = minEntry;
+	document.querySelector('.max-entry').innerText = maxEntry;
+};
 
 // submit guess button 
-var evaluationFeedback = document.querySelector('.evaluation-feedback');
-
 function submitGuess(e) {
   e.preventDefault();
   numberGuessed.innerText = guessInput.value;
   evaluateGuess(guessInput.value);
 };
 
-button.addEventListener('click', submitGuess);
-
-
 // guess feedback statements
 function evalFunc() {
   document.querySelector('.evaluation-feedback').innerText = evaluateGuess;
 };
 
-function evaluateGuess(x) {
-if (x == randomNumber) {
+function evaluateGuess(userGuessNumber) {
+if (userGuessNumber == randomNumber) {
   document.querySelector('.evaluation-feedback').innerText = 
   "BOOM!";
-} else if (x > randomNumber) {
+} else if (userGuessNumber > randomNumber) {
   document.querySelector('.evaluation-feedback').innerText = 
   "Sorry, that is too high";
 } else {
