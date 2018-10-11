@@ -8,6 +8,8 @@ body, html, .wrapper {
 }
 hr {
   width: 80%;
+  margin: 20px;
+  color: #404041;
 }
 .wrapper {
   display: flex;
@@ -16,7 +18,7 @@ hr {
 
 /* fonts */
 
-h1 {
+h1, .number-returned {
   color: #DD1972;
   padding: 10px;
   text-align: center;
@@ -82,7 +84,7 @@ label, input {
 
 /*buttons*/
 
-button, .reset {
+button, .reset, .clear {
   color: #FFFFFF;
   font-weight: bold;
 }

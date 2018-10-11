@@ -10,7 +10,7 @@ var minEntry = document.querySelector("#min-range").value;
 var maxEntry = document.querySelector("#max-range").value;
 var updateButton = document.querySelector('.update-range');
 var evaluationFeedback = document.querySelector('.evaluation-feedback');
-var clearButton = document.querySelector('.clear');
+// var resetButton = document.querySelector('.reset');
 
 
 submitButton.addEventListener('click', submitGuess);
@@ -23,11 +23,11 @@ updateButton.addEventListener('click', function() {
 	replaceMinMax();
 });
 
-clearButton.addEventListener('click', function() {
-	document.getElementById('#min-range').innerHTML = "";
-	document.getElementById('#max-range').innerHTML = "";
-	document.getElementById('#submit-guess-input').innerHTML = "";
-});
+// resetButton.addEventListener('click', function() {
+// 	document.getElementById(minEntry).value = "";
+// 	document.getElementById(maxEntry).value = "";
+// 	document.getElementById(userGuessNumber).value = "";
+// });
 
 // random number max/min parameters 
 // Math.floor(Math.random() * (maxEntry - minEntry+1)) + minEntry;
