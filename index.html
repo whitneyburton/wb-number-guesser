@@ -7,11 +7,13 @@
 </head>
 <body>
 <div class="wrapper">
+  
 <!-- left column -->
 <section class="left-column">
-    <p class="thicker">NUMBER</p>
-    <p class="thinner">GUESSER</p>
-  <!-- Min/Max Range -->
+    <h1 class="thicker">NUMBER</h1>
+    <h1 class="thinner">GUESSER</h1>
+
+<!-- min/max range -->
   <form action="#">
     <label for="min-range">Min Range</label>
      <input 
@@ -25,7 +27,6 @@
      type="submit" 
      value="Update" 
      class="update-range">
-    <!-- need closing div but, breaks code when we add it -->
   </form>
 
 <!-- horizonal rule -->
@@ -47,13 +48,11 @@
     <button 
       class="submit-guess-button" type="submit">
         SUBMIT GUESS</button>
-
-  <br> <!-- gotta fix this! -->
-
+    <br> <!-- gotta fix this! -->
     <button class="clear" type="submit">
         CLEAR</button>
-    <button class="reset" type="submit">
-        RESET</button>
+    <input class="reset" type="reset" value="RESET">
+
   </form>
 </section>
 
@@ -65,7 +64,6 @@
 </section>
 
 </div>
-<!-- where is opening div for closing one above? -->
 </body>
 <script type="text/javascript" src= "main.js"></script>
 </html>

@@ -1,6 +1,6 @@
 * {
   margin: 0px;
-  padding: 5px;
+  padding: 0px;
   font-family: Open Sans;
 }
 body, html, .wrapper {
@@ -15,15 +15,24 @@ hr {
 }
 
 /* fonts */
-p {
+
+h1 {
   color: #DD1972;
   padding: 10px;
   text-align: center;
   display: inline;
 }
-.current-range {
-  color: #DD1972;
+
+p, label {
+  color: #6E6E6E;
 }
+
+.min-entry, .max-entry {
+  color: #6E6E6E;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
 .thicker {
   font-weight: 700;
   font-size: 70px;
@@ -44,7 +53,7 @@ font-size: 50px;
 }
 
 h3 {
-    color: #DD1972;
+  color: #DD1972;
 }
 
 /* left column */
@@ -73,7 +82,7 @@ label, input {
 
 /*buttons*/
 
-button {
+button, .reset {
   color: #FFFFFF;
   font-weight: bold;
 }
