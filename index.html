@@ -13,42 +13,46 @@
     <p class="thinner">GUESSER</p>
   <!-- Min/Max Range -->
   <form action="#">
-    <label for="minRange">Min Range</label>
+    <label for="min-range">Min Range</label>
      <input 
      type="number" 
-     id="minRange">
-    <label for="maxRange">Max Range</label>
+     id="min-range">
+    <label for="max-range">Max Range</label>
     <input 
      type="number" 
-     id="maxRange">
+     id="max-range">
     <input 
      type="submit" 
-     value="update" 
+     value="Update" 
      class="update-range">
   </form>
 
-  <!-- horizonal rule -->
+<!-- horizonal rule -->
   <hr>
 
-  <!-- Submit Guess -->
+<!-- min/max inputs -->
   <div class="current-range">
-    The current range is 
+    <p>The current range is 
     <span class="min-entry">1</span> to 
-    <span class="max-entry">100</span></div>
+    <span class="max-entry">100</span></p></div>
 
+<!-- submit guess -->
   <form>
-    <label for="submit-guess-input">Guess</label>
+    <label for="submit-guess-input">
+        Guess</label>
     <input 
       id="submit-guess-input" 
       type="number">
     <button 
-      class="submit-guess-button" type="submit">SUBMIT GUESS
-    </button>
+      class="submit-guess-button" type="submit">
+        SUBMIT GUESS</button>
 
-  <br>
+  <br> <!-- gotta fix this! -->
 
-    <button class="clear" type="submit">CLEAR</button>
-    <button class="reset" type="submit">RESET</button>
+    <button class="clear" type="submit">
+        CLEAR</button>
+    <button class="reset" type="submit">
+        RESET</button>
   </form>
 </section>
 
