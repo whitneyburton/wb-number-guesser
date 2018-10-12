@@ -30,6 +30,7 @@ p, label {
 }
 
 .min-entry, .max-entry {
+  
   color: #6E6E6E;
   font-weight: bold;
   text-decoration: underline;
@@ -93,7 +94,7 @@ button, .reset, .clear {
   background-color: #6E6E6E;
   border-radius: 20px;
   display: block;
-  position: absolute;
+  /*position: absolute;*/
   width: 250px;
   padding: 5px;
 }

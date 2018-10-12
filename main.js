@@ -17,6 +17,7 @@ userGuessNumber.addEventListener('keyup', function() {
   console.log(userGuessNumber.value);
   if (userGuessNumber.value === "") { 
   }})
+// error message here
 
 submitButton.addEventListener('click', function() {
   if(checkGuessIsNumber()) {
@@ -51,6 +52,8 @@ resetButton.addEventListener('click', function() {
 function checkInputNotEmpty() {
   if (minEntry.value === "" || maxEntry.value === "" || userGuessNumber.value === "") {
     console.log("error message");
+    document.querySelector('.min-error-message').innerHTML = `<i class="fas fa-exclamation-triangle"></i> Enter a min range`;
+    document.querySelector('.max-error-message').innerHTML = `<i class="fas fa-exclamation-triangle"></i> Enter a max range`;
   };
 };
 
@@ -90,6 +93,7 @@ function checkMinMaxValue() {
 
 // explain to sally, change input type to number if time  
 function checkGuessIsNumber() {
+    document.querySelector('.nan-error-message').innerHTML = `<i class="fas fa-exclamation-triangle"></i> Not a number`;
     console.log('def not a number');
     return isNaN(userGuessNumber);
 };
