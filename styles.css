@@ -15,6 +15,17 @@ hr {
   display: flex;
   flex-direction: row;
 }
+section {
+  align-content: center;  
+  height: 100%;
+}
+
+.flex-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
 /* fonts */
 
@@ -30,7 +41,6 @@ p, label {
 }
 
 .min-entry, .max-entry {
-  
   color: #6E6E6E;
   font-weight: bold;
   text-decoration: underline;
@@ -40,10 +50,13 @@ p, label {
   font-weight: 700;
   font-size: 70px;
 }
-.thinner {
+
+.thicker::after {
+  content: 'GUESSER';
   font-weight: 300;
   font-size: 70px;
 }
+
 .number-returned {
   font-weight: 700;
   font-size: 70px;
@@ -70,7 +83,10 @@ h3 {
   font-weight: bold;
   display: inline-block;
 }
-label, input {
+
+
+
+input, .min-range-section, .max-range-section {
   display: inline-block;
   font-weight: bold;
 }
@@ -94,7 +110,7 @@ button, .reset, .clear {
   background-color: #6E6E6E;
   border-radius: 20px;
   display: block;
-  /*position: absolute;*/
+  position: absolute;
   width: 250px;
   padding: 5px;
 }
@@ -121,4 +137,5 @@ button, .reset, .clear {
   color: #FFFFFF;
   font-weight: bold;
 }
+
 
