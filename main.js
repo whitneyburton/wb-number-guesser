@@ -22,8 +22,9 @@ submitButton.addEventListener('click', function() {
   if(checkGuessIsNumber()) {
   document.querySelector('.evaluation-feedback').innerText = 
   "Your entry is not a number.";
-  } else {
-    submitGuess();
+  } else if(checkInputNotEmpty()) {
+  }  else {
+      submitGuess();
   }
 });
 
@@ -33,7 +34,7 @@ updateButton.addEventListener('click', function() {
 	range = max - min;
 	randomNumber = generateRandomNumber(range, min);
 	replaceMinMax();
-  checkInputValue();
+  checkInputNotEmpty();
 });
 
 resetButton.addEventListener('click', function() {
@@ -46,6 +47,12 @@ resetButton.addEventListener('click', function() {
 
 // random number max/min parameters 
 // Math.floor(Math.random() * (maxEntry - minEntry+1)) + minEntry;
+
+function checkInputNotEmpty() {
+  if (minEntry.value === "" || maxEntry.value === "" || userGuessNumber.value === "") {
+    console.log("error message");
+  };
+};
 
 function generateRandomNumber(range, min) {
 	var updatedRandomNumber = Math.floor(Math.random() * (range + 1) + min);
@@ -81,7 +88,7 @@ function checkMinMaxValue() {
   }
 }
 
-// explain to sally  
+// explain to sally, change input type to number if time  
 function checkGuessIsNumber() {
     console.log('def not a number');
     return isNaN(userGuessNumber);
