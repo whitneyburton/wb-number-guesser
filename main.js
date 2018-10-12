@@ -18,7 +18,14 @@ userGuessNumber.addEventListener('keyup', function() {
   if (userGuessNumber.value === "") { 
   }})
 
-submitButton.addEventListener('click', submitGuess);
+submitButton.addEventListener('click', function() {
+  if(checkGuessIsNumber()) {
+  document.querySelector('.evaluation-feedback').innerText = 
+  "Your entry is not a number.";
+  } else {
+    submitGuess();
+  }
+});
 
 updateButton.addEventListener('click', function() {
 	min = parseInt(document.querySelector("#min-range").value);
@@ -66,12 +73,20 @@ function submitGuess(e) {
   evaluateGuess(userGuessNumber.value);
 };
 
-// guess feedback statements
-function checkInputValue() {
+// finish this 
+function checkMinMaxValue() {
   if(minEntry.value > maxEntry.value) {
+    // error message here!
     console.log("min greater than max");
+  }
 }
-}
+
+// explain to sally  
+function checkGuessIsNumber() {
+    console.log('def not a number');
+    return isNaN(userGuessNumber);
+};
+
 
 function evaluateGuess(userGuessNumber) {
 if (userGuessNumber == randomNumber) {
