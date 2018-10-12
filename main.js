@@ -1,17 +1,22 @@
 var numberGuessed = document.querySelector('.number-returned');
-var guessInput = document.querySelector('#submit-guess-input');
 var submitButton = document.querySelector('.submit-guess-button');
 var min = 1;
 var max = 100;
 var range = max - min;
 var randomNumber = generateRandomNumber(range, min);
 var userGuessNumber = document.querySelector("#submit-guess-input");
-var minEntry = document.querySelector("#min-range").value;
-var maxEntry = document.querySelector("#max-range").value;
+var minEntry = document.querySelector("#min-range");
+var maxEntry = document.querySelector("#max-range");
 var updateButton = document.querySelector('.update-range');
 var evaluationFeedback = document.querySelector('.evaluation-feedback');
-var clearButton = document.querySelector('.clear');
+var resetButton = document.querySelector('.reset');
 
+userGuessNumber.addEventListener('keyup', function() {
+  min = parseInt(document.querySelector("#min-range").value);
+  max = parseInt(document.querySelector("#max-range").value);
+  console.log(userGuessNumber.value);
+  if (userGuessNumber.value === "") { 
+  }})
 
 submitButton.addEventListener('click', submitGuess);
 
@@ -21,12 +26,15 @@ updateButton.addEventListener('click', function() {
 	range = max - min;
 	randomNumber = generateRandomNumber(range, min);
 	replaceMinMax();
+  checkInputValue();
 });
 
-clearButton.addEventListener('click', function() {
-	document.getElementById('#min-range').innerHTML = "";
-	document.getElementById('#max-range').innerHTML = "";
-	document.getElementById('#submit-guess-input').innerHTML = "";
+resetButton.addEventListener('click', function() {
+	minEntry.value = "";
+	maxEntry.value = "";
+	userGuessNumber.value = "";
+  generateRandomNumber(range, min);
+  rightSideTextClear();
 });
 
 // random number max/min parameters 
@@ -39,21 +47,31 @@ function generateRandomNumber(range, min) {
 };
 
 function replaceMinMax() {
-	document.querySelector('.min-entry').innerText = minEntry;
-	document.querySelector('.max-entry').innerText = maxEntry;
+	document.querySelector('.min-entry').innerText = minEntry.value;
+	document.querySelector('.max-entry').innerText = maxEntry.value;
+};
+
+function rightSideTextClear() {
+  numberGuessed.value = "";
+  // fix code below, SAVE FOR LATER ...submit guess button doesn't get new number
+  // after reset
+  document.querySelector('.evaluation-feedback').innerText = "";
+  document.querySelector('.number-returned').innerText = "";
 };
 
 // submit guess button 
 function submitGuess(e) {
   e.preventDefault();
-  numberGuessed.innerText = guessInput.value;
-  evaluateGuess(guessInput.value);
+  numberGuessed.innerText = userGuessNumber.value;
+  evaluateGuess(userGuessNumber.value);
 };
 
 // guess feedback statements
-function evalFunc() {
-  document.querySelector('.evaluation-feedback').innerText = evaluateGuess;
-};
+function checkInputValue() {
+  if(minEntry.value > maxEntry.value) {
+    console.log("min greater than max");
+}
+}
 
 function evaluateGuess(userGuessNumber) {
 if (userGuessNumber == randomNumber) {
@@ -67,3 +85,6 @@ if (userGuessNumber == randomNumber) {
   "Sorry that is too low";
 }
 };
+// } else (userGuessNumber < ) {
+//   document.querySelector('.evaluation-feedback').innerText 
+// }
