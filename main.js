@@ -21,8 +21,7 @@ userGuessNumber.addEventListener('keyup', function() {
 
 submitButton.addEventListener('click', function() {
   if(checkGuessIsNumber()) {
-  document.querySelector('.evaluation-feedback').innerText = 
-  "Your entry is not a number.";
+    document.querySelector('.nan-error-message').innerHTML = `<i class="fas fa-exclamation-triangle"></i> Not a number`;
   } else if(checkInputNotEmpty()) {
   }  else {
       submitGuess();
@@ -50,9 +49,16 @@ resetButton.addEventListener('click', function() {
 // Math.floor(Math.random() * (maxEntry - minEntry+1)) + minEntry;
 
 function checkInputNotEmpty() {
-  if (minEntry.value === "" || maxEntry.value === "" || userGuessNumber.value === "") {
-    console.log("error message");
+  if (minEntry.value === "" && maxEntry === "") {
     document.querySelector('.min-error-message').innerHTML = `<i class="fas fa-exclamation-triangle"></i> Enter a min range`;
+    document.querySelector('.max-error-message').innerHTML = `<i class="fas fa-exclamation-triangle"></i> Enter a max range`;
+  }
+  else if (minEntry.value === "") {
+    document.querySelector('.min-error-message').innerHTML = `<i class="fas fa-exclamation-triangle"></i> Enter a min range`;
+    console.log("there's no min!")
+  } else if (maxEntry.value === "") {
+    console.log("there's no max!")
+    // console.log("error message");
     document.querySelector('.max-error-message').innerHTML = `<i class="fas fa-exclamation-triangle"></i> Enter a max range`;
   };
 };
@@ -78,7 +84,7 @@ function rightSideTextClear() {
 
 // submit guess button 
 function submitGuess(e) {
-  e.preventDefault();
+  // e.preventDefault();
   numberGuessed.innerText = userGuessNumber.value;
   evaluateGuess(userGuessNumber.value);
 };
@@ -93,9 +99,11 @@ function checkMinMaxValue() {
 
 // explain to sally, change input type to number if time  
 function checkGuessIsNumber() {
-    document.querySelector('.nan-error-message').innerHTML = `<i class="fas fa-exclamation-triangle"></i> Not a number`;
     console.log('def not a number');
-    return isNaN(userGuessNumber);
+    // input fields are always strings until you parseInt
+    var inputNum = parseInt(userGuessNumber.value);
+    console.log(isNaN(inputNum));
+    return isNaN(inputNum);
 };
 
 
@@ -103,12 +111,14 @@ function evaluateGuess(userGuessNumber) {
 if (userGuessNumber == randomNumber) {
   document.querySelector('.evaluation-feedback').innerText = 
   "BOOM, you got it!";
-} else if (userGuessNumber > randomNumber) {
+} else if (userGuessNumber > randomNumber && userGuessNumber < maxEntry.value) {
   document.querySelector('.evaluation-feedback').innerText = 
   "Sorry, that is too high";
-} else {
+} else if (userGuessNumber < randomNumber && userGuessNumber > minEntry.value) {
   document.querySelector('.evaluation-feedback').innerText = 
   "Sorry that is too low";
+} else { 
+  document.querySelector('.evaluation-feedback').innerText = "Sorry, that is outside of the range, try again";
 }
 };
 // } else (userGuessNumber < ) {
