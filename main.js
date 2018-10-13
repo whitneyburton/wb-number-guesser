@@ -17,7 +17,7 @@ userGuessNumber.addEventListener('keyup', function() {
   console.log(userGuessNumber.value);
   if (userGuessNumber.value === "") { 
   }})
-// error message here
+// error message here!
 
 submitButton.addEventListener('click', function() {
   if(checkGuessIsNumber()) {
