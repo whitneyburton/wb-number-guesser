@@ -18,13 +18,15 @@
   <form>
     <div class="min-range-section">
       <p>Min Range</p>
-     <input type="text" id="min-range">
+     <input type="number" id="min-range">
    </div>
    <div class="max-range-section">
     <p>Max Range</p>
-    <input type="text" id="max-range">
+    <input type="number" id="max-range">
     </div>
     <input type="submit" value="Update" class="update-range">
+    <p class="min-error-message"></p>
+    <p class = "max-error-message"></p>
 
 <!-- horizonal rule -->
   <hr>
@@ -36,20 +38,20 @@
     <span class="max-entry">100</span></p></div>
     <p class="min-entry"></p>
     <p class="max-entry"></p>
-    <p class="min-error-message"></p>
-    <p class = "max-error-message"></p>
+    
 
 <!-- submit guess -->
     <label for="submit-guess-input">
         Guess</label>
     <input 
       id="submit-guess-input" 
-      type="text">
+      type="number">
     <button 
       class="submit-guess-button" type="submit">
         SUBMIT GUESS</button>
     <br> <!-- gotta fix this! -->
     <input class="clear" type="reset" value="CLEAR">
+
     <button class="reset" type="submit">
         RESET</button>
 
