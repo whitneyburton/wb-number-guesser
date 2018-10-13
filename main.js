@@ -10,13 +10,24 @@ var maxEntry = document.querySelector("#max-range");
 var updateButton = document.querySelector('.update-range');
 var evaluationFeedback = document.querySelector('.evaluation-feedback');
 var resetButton = document.querySelector('.reset');
+var clearButton = document.querySelector('.clear');
+
+clearButton.disabled = true;
+resetButton.disabled = true;
+
 
 userGuessNumber.addEventListener('keyup', function() {
   min = parseInt(document.querySelector("#min-range").value);
   max = parseInt(document.querySelector("#max-range").value);
   console.log(userGuessNumber.value);
   if (userGuessNumber.value === "") { 
-  }})
+    clearButton.disabled = true;
+    resetButton.disabled = true;
+  } else {
+    clearButton.disabled = false;
+    resetButton.disabled = false;
+  }
+})
 
 submitButton.addEventListener('click', function(e) {
   e.preventDefault();
@@ -98,4 +109,5 @@ function checkMinMaxValue() {
     } else { 
       document.querySelector('.evaluation-feedback').innerText = 
       "Sorry, that is outside of the range, try again.";
+      document.querySelector('.number-returned').innerText = '';
     }};
