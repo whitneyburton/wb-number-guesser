@@ -4,32 +4,26 @@
   <title>Number Guesser Doubles</title>
   <link rel="stylesheet" type="text/css" href="styles.css">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,700" rel="stylesheet">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
 </head>
 <body>
 <div class="wrapper">
 
 <!-- left column -->
 <section class="left-column">
+  <section class='flex-section'>
     <h1 class="thicker">NUMBER</h1>
-    <h1 class="thinner">GUESSER</h1>
 
 <!-- min/max range -->
-  <form action="#">
-    <label for="min-range">Min Range</label>
-     <input 
-     type="text" 
-     id="min-range">
-    <label for="max-range">Max Range</label>
-    <input 
-     type="text" 
-     id="max-range">
-    <input 
-     type="submit" 
-     value="Update" 
-     class="update-range">
-     <p class=" min-error-message"></p>
-     <p class="max-error-message"></p>
+  <form>
+    <div class="min-range-section">
+      <p>Min Range</p>
+     <input type="text" id="min-range">
+   </div>
+   <div class="max-range-section">
+    <p>Max Range</p>
+    <input type="text" id="max-range">
+    </div>
+    <input type="submit" value="Update" class="update-range">
 
 <!-- horizonal rule -->
   <hr>
@@ -49,20 +43,22 @@
     <button 
       class="submit-guess-button" type="submit">
         SUBMIT GUESS</button>
-        <p class="nan-error-message"></p>
     <br> <!-- gotta fix this! -->
     <input class="clear" type="reset" value="CLEAR">
     <button class="reset" type="submit">
         RESET</button>
 
   </form>
+  </section>
 </section>
 
 <!-- right column -->
 <section class="right-column">
+  <section class="flex-section">
   <h2>You Guessed:</h2> 
   <p class = "number-returned"></p>
   <h2 class="evaluation-feedback"></h2>
+</section>
 </section>
 
 </div>
