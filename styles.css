@@ -47,12 +47,19 @@ p, label {
   height: 30px;
   width: 190px;
 }
+
+/*highlight field if no input
+#min-range, #max-range:invalid { 
+  border-color: #DD1972;
+}*/
+
 #submit-guess-input {
   height: 30px;
   width: 400px;
 }
 .min-error-message, .max-error-message {
   display: inline-block;
+  color: #DD1972;
   padding-right: 45px;
 }
 .thicker {
@@ -89,8 +96,6 @@ h3 {
   font-weight: bold;
   display: inline-block;
 }
-
-
 
 input, .min-range-section, .max-range-section {
   display: inline-block;

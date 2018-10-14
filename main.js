@@ -58,10 +58,19 @@ resetButton.addEventListener('click', function() {
 function checkInputNotEmpty() {
   if (minEntry.value === "") {
     document.querySelector('.min-error-message').innerHTML = `<i class="fas fa-exclamation-triangle"></i> Enter a min range`;
+    minEntry.style.border= "1px solid #DD1972";
+  } else {
+    minEntry.style.border= "none";
+    document.querySelector('.min-error-message').innerHTML = "";
   }
+
   if (maxEntry.value === "") {
     document.querySelector('.max-error-message').innerHTML = `<i class="fas fa-exclamation-triangle"></i> Enter a max range`;
-  };
+    maxEntry.style.border= "1px solid #DD1972";
+  } else {
+    maxEntry.style.border= "none";
+    document.querySelector('.max-error-message').innerHTML = "";
+  }
 };
 
 function generateRandomNumber(range, min) {
