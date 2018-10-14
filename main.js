@@ -15,7 +15,6 @@ var clearButton = document.querySelector('.clear');
 clearButton.disabled = true;
 resetButton.disabled = true;
 
-
 userGuessNumber.addEventListener('keyup', function() {
   min = parseInt(document.querySelector("#min-range").value);
   max = parseInt(document.querySelector("#max-range").value);
@@ -27,7 +26,7 @@ userGuessNumber.addEventListener('keyup', function() {
     clearButton.disabled = false;
     resetButton.disabled = false;
   }
-})
+});
 
 submitButton.addEventListener('click', function(e) {
   e.preventDefault();
@@ -93,21 +92,22 @@ function checkMinMaxValue() {
     "Sorry, your min entry is higher than your max entry, try again";
   }};
 
-  function evaluateGuess(userGuessNumber) {
-    if (userGuessNumber === "") {
-      document.querySelector('.evaluation-feedback').innerText =
-      "Please enter a guess!";
-    } else if (userGuessNumber == randomNumber) {
-      document.querySelector('.evaluation-feedback').innerText = 
-      "BOOM, you got it!";
-    } else if (userGuessNumber > randomNumber && userGuessNumber <= maxEntry.value) {
-      document.querySelector('.evaluation-feedback').innerText = 
-      "Sorry, that is too high.";
-    } else if (userGuessNumber < randomNumber && userGuessNumber >= minEntry.value) {
-      document.querySelector('.evaluation-feedback').innerText = 
-      "Sorry that is too low.";
-    } else { 
-      document.querySelector('.evaluation-feedback').innerText = 
-      "Sorry, that is outside of the range, try again.";
-      document.querySelector('.number-returned').innerText = '';
-    }};
+function playerWins() {
+  maxEntry.value = ((parseInt(maxEntry.value)) +10);
+  minEntry.value = ((parseInt(minEntry.value)) -10);
+}
+
+function evaluateGuess(userGuessNumber) {
+  if (userGuessNumber === "") {
+    evaluationFeedback.innerText = "Please enter a guess!";
+  } else if (userGuessNumber == randomNumber) {
+    evaluationFeedback.innerText = "BOOM, you got it!";
+    playerWins();
+  } else if (userGuessNumber > randomNumber && userGuessNumber <= maxEntry.value) {
+    evaluationFeedback.innerText = "Sorry, that is too high.";
+  } else if (userGuessNumber < randomNumber && userGuessNumber >= minEntry.value) {
+    evaluationFeedback.innerText = "Sorry that is too low.";
+  } else { 
+    evaluationFeedback.innerText = "Sorry, that is outside of the range, try again.";
+    numberGuessed.innerText = "";
+  }};
