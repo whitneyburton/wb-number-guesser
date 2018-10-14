@@ -7,8 +7,7 @@ body, html, .wrapper {
   height: 100%;
 }
 hr {
-  width: 100%;
-  margin: 20px;
+  margin: 5px;
   color: #404041;
 }
 .wrapper {
@@ -23,8 +22,9 @@ section {
 .flex-section {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
+
 }
 
 /* fonts */
@@ -102,12 +102,28 @@ input, .min-range-section, .max-range-section {
   font-weight: bold;
 }
 
+.challenger-name, .challenger-guess {
+  display: inline-block;
+}
+
+.challenger-latest-score {
+  display: inline-block;
+}
+
 /* right column */
 .right-column {
   background-color: #404041;
   width: 100%;
   text-align: center;
   padding: 20px;
+}
+
+.winner-stats {
+  height: auto;
+  width: 530px;
+  background-color: lightgrey;
+  padding: 5px;
+  margin: 5px;
 }
 
 /*buttons*/

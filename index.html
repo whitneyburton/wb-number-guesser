@@ -5,6 +5,9 @@
   <link rel="stylesheet" type="text/css" href="styles.css">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,700" rel="stylesheet">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+
+
 </head>
 <body>
 <div class="wrapper">
@@ -33,20 +36,36 @@
   <hr>
 
 <!-- min/max inputs -->
+<section class = "challenger-left-side">
   <div class="current-range">
     <p>The current range is 
     <span class="min-entry">1</span> to 
     <span class="max-entry">100</span></p></div>
     <p class="min-entry"></p>
     <p class="max-entry"></p>
-    
 
-<!-- submit guess -->
-    <label for="submit-guess-input">
-        Guess</label>
-    <input 
-      id="submit-guess-input" 
-      type="number">
+    <!-- Challenger inputs -->
+    <p>Challenger 1</p>
+   
+
+     <div class = "challenger-name">
+        <p>Name</p>
+        <input type="text" id="user1-name">
+    </div>
+    <div class = "challenger-guess">
+        <p>Guess</p>
+        <input type="number" id="user1-guess">
+      </div>
+
+      <p>Challenger 2</p>
+    <div class = "challenger-name">
+        <p>Name</p>
+        <input type="text" id="user2-name">
+    </div>
+    <div class = "challenger-guess">
+        <p>Guess</p>
+        <input type="number" id="user2-guess">
+      </div>
     <button 
       class="submit-guess-button" type="submit">
         SUBMIT GUESS</button>
@@ -55,6 +74,28 @@
 
     <button class="reset" type="submit">
         RESET</button>
+</section>
+<!-- submit guess -->
+   <!-- <label for="submit-guess-input">
+        Guess</label>
+    <input 
+      id="submit-guess-input" 
+      type="number"> -->
+    <article class='challenger-latest-score'>
+      <p>Latest Score</p>
+      <p class= "name1"></p>
+      <p>Current Guess</p>
+      <p class = "user1-num-returned"></p>
+      <h4 class="guess1-feedback"></h4>
+    </article>
+
+    <article class='challenger-latest-score'>
+      <p class="name2"></p>
+      <p>Current Guess</p>
+      <p class="user2-num-returned"></p>
+      <h4 class="guess2-feedback"></h4>
+    </article>
+
 
   </form>
   </section>
@@ -63,9 +104,62 @@
 <!-- right column -->
 <section class="right-column">
   <section class="flex-section">
+
+    <article class="winner-stats">
+      <div> 
+        <p>Challenger 1 Name VS. Challenger 2 Name</p>
+        <hr>
+      </div>
+      <div>
+        <p>Challenger 2 Name</p>
+        <p>Winner</p>
+        <hr>
+      </div>
+      <div>
+        <p>47 Guesses</p>
+        <p>1.35 Minutes</p>
+        <i class="fas fa-times-circle"></i>
+      </div>
+    </article>
+
+    <article class="winner-stats">
+      <div> 
+        <p>Challenger 1 Name VS. Challenger 2 Name</p>
+        <hr>
+      </div>
+      <div>
+        <p>Challenger 2 Name</p>
+        <p>Winner</p>
+        <hr>
+      </div>
+      <div>
+        <p>47 Guesses</p>
+        <p>1.35 Minutes</p>
+        <i class="fas fa-times-circle"></i>
+      </div>
+    </article>
+
+    <article class="winner-stats">
+      <div> 
+        <p>Challenger 1 Name VS. Challenger 2 Name</p>
+        <hr>
+      </div>
+      <div>
+        <p>Challenger 2 Name</p>
+        <p>Winner</p>
+        <hr>
+      </div>
+      <div>
+        <p>47 Guesses</p>
+        <p>1.35 Minutes</p>
+       <i class="fas fa-times-circle"></i>
+      </div>
+    </article>
+    
   <h2>You Guessed:</h2> 
   <p class = "number-returned"></p>
   <h2 class="evaluation-feedback"></h2>
+
 </section>
 </section>
 
