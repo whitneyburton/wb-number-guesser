@@ -153,17 +153,17 @@ function addWinnerCard() {
   element.className = 'winner-stats';
   element.innerHTML = 
     `<div> 
-        <p> ${user1NameField.value} VS. ${user2NameField.value} </p> 
+        <p class = 'challenger1-text'> ${(user1NameField.value).toUpperCase()} <span class = 'vs'>VS.</span> ${(user2NameField.value).toUpperCase()} </p> 
         <hr> 
       </div> 
       <div> 
-        <p> ${user1NameField.value} </p> 
+        <p> ${(user1NameField.value).toUpperCase()} </p> 
         <p>Winner</p> 
         <hr> 
       </div> 
       <div> 
-        <p>47 Guesses</p> 
-        <p> ${realTime(startTime, endTime)} </p> 
+        <p class = 'number-of-guesses'>47 Guesses</p> 
+        <p class = 'time-to-win'> ${realTime(startTime, endTime)} </p> 
         <i class="fas fa-times-circle"></i> 
       </div>`;
   challengerSummary.appendChild(element);

@@ -142,6 +142,10 @@ input, .min-range-section, .max-range-section {
   font-weight: bold;
 }
 
+.vs {
+  font-weight: lighter;
+}
+
 /* right column */
 .right-column {
   background-color: #404041;
@@ -156,6 +160,11 @@ input, .min-range-section, .max-range-section {
   background-color: lightgrey;
   padding: 5px;
   margin: 5px;
+}
+
+/* player win cards */
+.number-of-guesses, .time-to-win, .fa-times-circle {
+  display: inline-block;
 }
 
 /*buttons*/
