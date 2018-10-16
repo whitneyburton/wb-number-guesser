@@ -18,13 +18,14 @@ var nameOne = document.querySelector('.name1');
 var nameTwo = document.querySelector('.name2');
 var user1NameField = document.querySelector('#user1-name');
 var user2NameField = document.querySelector('#user2-name');
-
+var startTime 
+var endTime
+var isFirstRound = true;
 
 clearButton.disabled = true;
 resetButton.disabled = true;
 
 user1GuessNum.addEventListener('keyup', function() {
-  console.log(user1GuessNum.value);
   if (user1GuessNum.value === "") { 
     clearButton.disabled = true;
     resetButton.disabled = true;
@@ -35,7 +36,6 @@ user1GuessNum.addEventListener('keyup', function() {
 });
 
 user2GuessNum.addEventListener('keyup', function() {
-  console.log(user2GuessNum.value);
   if (user2GuessNum.value === "") { 
     clearButton.disabled = true;
     resetButton.disabled = true;
@@ -45,11 +45,10 @@ user2GuessNum.addEventListener('keyup', function() {
   }
 });
 
-submitButton.addEventListener('click', function(e) {
-  e.preventDefault();
-  if (checkInputNotEmpty()) {
-  } else {
-    submitGuess();
+submitButton.addEventListener('click', submitButtonListener);
+submitButton.addEventListener('submit', function(e) {
+  if (e.keyCode === 13) {
+  submitButtonListener(e); 
   }
 });
 
@@ -71,6 +70,18 @@ resetButton.addEventListener('click', function() {
   generateRandomNumber(range, min);
   rightSideTextClear();
 });
+
+function submitButtonListener(e) {
+    e.preventDefault();
+  if (checkInputNotEmpty()) {
+  } else {
+    if (isFirstRound) {
+    startTime = new Date;
+    isFirstRound = false;
+    }
+    submitGuess();
+  }
+};
 
 function checkInputNotEmpty() {
   if (minEntry.value === "") {
@@ -110,20 +121,19 @@ function rightSideTextClear() {
 function submitGuess() {
   user1Guess.innerText = user1GuessNum.value;
   user2Guess.innerText = user2GuessNum.value;
-  evaluateGuess1(user1GuessNum.value);
-  evaluateGuess2(user2GuessNum.value);
+  evaluateGuess1(parseInt(user1GuessNum.value));
+  evaluateGuess2(parseInt(user2GuessNum.value));
   updateName1(user1NameField.value);
   updateName2(user2NameField.value);
 };
 
 function updateName1(user1NameField) {
   nameOne.innerText = user1NameField;
-  
-}
+};
 
 function updateName2(user2NameField) {
   nameTwo.innerText = user2NameField;
-}
+};
 
 function checkMinMaxValue() {
   if (minEntry.value > maxEntry.value) {
@@ -134,21 +144,47 @@ function checkMinMaxValue() {
 function resetMinMax() {
   maxEntry.value = ((parseInt(maxEntry.value)) +10);
   minEntry.value = ((parseInt(minEntry.value)) -10);
-}
+};
 
 function addWinnerCard() {
-  
-}
+  console.log({startTime, endTime});
+  var element = document.createElement('article');
+  var challengerSummary = document.querySelector('#challenger-summary');
+  element.className = 'winner-stats';
+  element.innerHTML = 
+    `<div> 
+        <p> ${user1NameField.value} VS. ${user2NameField.value} </p> 
+        <hr> 
+      </div> 
+      <div> 
+        <p> ${user1NameField.value} </p> 
+        <p>Winner</p> 
+        <hr> 
+      </div> 
+      <div> 
+        <p>47 Guesses</p> 
+        <p> ${realTime(startTime, endTime)} </p> 
+        <i class="fas fa-times-circle"></i> 
+      </div>`;
+  challengerSummary.appendChild(element);
+};
+
+
+function realTime(start, end) {
+  var time = (end - start) / 1000;
+  return time;
+};
+
 
 function evaluateGuess1(user1GuessNum) {
+// debugger;
   if (user1GuessNum === "") {
     guess1Feedback.innerText = "Please enter a guess!";
   } else if (user1GuessNum == randomNumber) {
     guess1Feedback.innerText = "BOOM, you got it!";
     resetMinMax();
-
+    endTime = new Date;
     addWinnerCard();
-
   } else if (user1GuessNum > randomNumber && user1GuessNum <= maxEntry.value) {
     guess1Feedback.innerText = "Sorry, that is too high.";
   } else if (user1GuessNum < minEntry.value || user1GuessNum > maxEntry.value){ 
@@ -164,9 +200,8 @@ function evaluateGuess2(user2GuessNum) {
   } else if (user2GuessNum == randomNumber) {
     guess2Feedback.innerText = "BOOM, you got it!";
     resetMinMax();
-
+    endTime = new Date;
     addWinnerCard();
-    
   } else if (user2GuessNum > randomNumber && user2GuessNum <= maxEntry.value) {
     guess2Feedback.innerText = "Sorry, that is too high.";
   } else if (user2GuessNum < minEntry.value || user2GuessNum > maxEntry.value) { 
