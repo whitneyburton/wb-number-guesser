@@ -21,6 +21,7 @@ var user2NameField = document.querySelector('#user2-name');
 var startTime 
 var endTime
 var isFirstRound = true;
+var counter = 0;
 
 clearButton.disabled = true;
 resetButton.disabled = true;
@@ -73,6 +74,7 @@ resetButton.addEventListener('click', function() {
 
 function submitButtonListener(e) {
     e.preventDefault();
+     console.log(++counter);
   if (checkInputNotEmpty()) {
   } else {
     if (isFirstRound) {
@@ -157,12 +159,12 @@ function addWinnerCard() {
         <hr> 
       </div> 
       <div> 
-        <p> ${(user1NameField.value).toUpperCase()} </p> 
+        <p> ${user1NameField} </p> 
         <p>Winner</p> 
         <hr> 
       </div> 
       <div> 
-        <p class = 'number-of-guesses'>47 Guesses</p> 
+        <p class = 'number-of-guesses'>${counter} Guesses</p> 
         <p class = 'time-to-win'> ${realTime(startTime, endTime)} </p> 
         <i class="fas fa-times-circle"></i> 
       </div>`;
@@ -176,12 +178,14 @@ function realTime(start, end) {
 };
 
 
+
 function evaluateGuess1(user1GuessNum) {
 // debugger;
   if (user1GuessNum === "") {
     guess1Feedback.innerText = "please enter a guess";
   } else if (user1GuessNum == randomNumber) {
     guess1Feedback.innerText = "BOOM!";
+    // var winner = user1NameField.value;
     resetMinMax();
     endTime = new Date;
     addWinnerCard();
@@ -199,6 +203,7 @@ function evaluateGuess2(user2GuessNum) {
     guess2Feedback.innerText = "please enter a guess";
   } else if (user2GuessNum == randomNumber) {
     guess2Feedback.innerText = "BOOM!";
+    // var winner = user2NameField.value;
     resetMinMax();
     endTime = new Date;
     addWinnerCard();
