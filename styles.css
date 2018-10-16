@@ -112,7 +112,6 @@ h3 {
 }
 .clear, .reset {
   font-weight: bold;
-  display: inline-block;
 }
 
 input, .min-range-section, .max-range-section {
@@ -172,6 +171,7 @@ input, .min-range-section, .max-range-section {
 button, .reset, .clear {
   color: #FFFFFF;
   font-weight: bold;
+  display: inline-block;
 }
 
 .submit-guess-button {
