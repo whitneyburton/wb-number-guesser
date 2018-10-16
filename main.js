@@ -1,29 +1,58 @@
-var user1Guess = document.querySelector('.user1-num-returned');
-var user2Guess = document.querySelector('.user2-num-returned')
-var submitButton = document.querySelector('.submit-guess-button');
-var min = 1;
-var max = 100;
-var range = max - min;
-var randomNumber = generateRandomNumber(range, min);
-var user1GuessNum = document.querySelector("#user1-guess");
-var user2GuessNum = document.querySelector("#user2-guess");
-var minEntry = document.querySelector("#min-range");
-var maxEntry = document.querySelector("#max-range");
-var updateButton = document.querySelector('.update-range');
-var guess1Feedback = document.querySelector('.guess1-feedback');
-var guess2Feedback = document.querySelector('.guess2-feedback');
-var resetButton = document.querySelector('.reset');
-var clearButton = document.querySelector('.clear');
-var nameOne = document.querySelector('.name1');
-var nameTwo = document.querySelector('.name2');
-var user1NameField = document.querySelector('#user1-name');
-var user2NameField = document.querySelector('#user2-name');
-var startTime 
+var clearButton =     document.querySelector('.clear');
+var counter =         0;
 var endTime
-var isFirstRound = true;
+var guess1Feedback =  document.querySelector('.guess1-feedback');
+var guess2Feedback =  document.querySelector('.guess2-feedback');
+var isFirstRound =    true;
+var minEntry =        document.querySelector("#min-range");
+var maxEntry =        document.querySelector("#max-range");
+var startTime 
+var submitButton =    document.querySelector('.submit-guess-button');
+var min =             1;
+var max =             100;
+var nameOne =         document.querySelector('.name1');
+var nameTwo =         document.querySelector('.name2');
+var range =           max - min;
+var randomNumber =    generateRandomNumber(range, min);
+var resetButton =     document.querySelector('.reset');
+var updateButton =    document.querySelector('.update-range');
+var user1Guess =      document.querySelector('.user1-num-returned');
+var user2Guess =      document.querySelector('.user2-num-returned')
+var user1GuessNum =   document.querySelector("#user1-guess");
+var user2GuessNum =   document.querySelector("#user2-guess");
+var user1NameField =  document.querySelector('#user1-name');
+var user2NameField =  document.querySelector('#user2-name');
+
+
+submitButton.addEventListener('click', submitButtonListener);
+submitButton.addEventListener('submit', function(e) {
+  if (e.keyCode === 13) {
+  submitButtonListener(e); 
+  }
+});
+
+
+updateButton.addEventListener('click', function(e) {
+  e.preventDefault();
+  min = parseInt(document.querySelector("#min-range").value);
+  max = parseInt(document.querySelector("#max-range").value);
+  range = max - min;
+  randomNumber = generateRandomNumber(range, min);
+  replaceMinMax();
+  checkInputNotEmpty();
+  checkMinMaxValue();
+});
 
 clearButton.disabled = true;
 resetButton.disabled = true;
+
+resetButton.addEventListener('click', function() {
+  minEntry.value = "";
+  maxEntry.value = "";
+  userGuessNumber.value = "";
+  generateRandomNumber(range, min);
+  rightSideTextClear();
+});
 
 user1GuessNum.addEventListener('keyup', function() {
   if (user1GuessNum.value === "") { 
@@ -45,31 +74,6 @@ user2GuessNum.addEventListener('keyup', function() {
   }
 });
 
-submitButton.addEventListener('click', submitButtonListener);
-submitButton.addEventListener('submit', function(e) {
-  if (e.keyCode === 13) {
-  submitButtonListener(e); 
-  }
-});
-
-updateButton.addEventListener('click', function(e) {
-  e.preventDefault();
-  min = parseInt(document.querySelector("#min-range").value);
-  max = parseInt(document.querySelector("#max-range").value);
-  range = max - min;
-  randomNumber = generateRandomNumber(range, min);
-  replaceMinMax();
-  checkInputNotEmpty();
-  checkMinMaxValue();
-});
-
-resetButton.addEventListener('click', function() {
-  minEntry.value = "";
-  maxEntry.value = "";
-  userGuessNumber.value = "";
-  generateRandomNumber(range, min);
-  rightSideTextClear();
-});
 
 function submitButtonListener(e) {
     e.preventDefault();
@@ -125,6 +129,7 @@ function submitGuess() {
   evaluateGuess2(parseInt(user2GuessNum.value));
   updateName1(user1NameField.value);
   updateName2(user2NameField.value);
+  ++counter;
 };
 
 function updateName1(user1NameField) {
@@ -146,8 +151,7 @@ function resetMinMax() {
   minEntry.value = ((parseInt(minEntry.value)) -10);
 };
 
-function addWinnerCard() {
-  console.log({startTime, endTime});
+function addWinnerCard(winner) {
   var element = document.createElement('article');
   var challengerSummary = document.querySelector('#challenger-summary');
   element.className = 'winner-stats';
@@ -157,39 +161,42 @@ function addWinnerCard() {
         <hr> 
       </div> 
       <div> 
-        <p> ${(user1NameField.value).toUpperCase()} </p> 
+        <p> ${winner.toUpperCase()} </p> 
         <p>Winner</p> 
         <hr> 
       </div> 
       <div> 
-        <p class = 'number-of-guesses'>47 Guesses</p> 
+        <p class = 'number-of-guesses'>${counter} Guesses</p> 
         <p class = 'time-to-win'> ${realTime(startTime, endTime)} </p> 
         <i class="fas fa-times-circle"></i> 
       </div>`;
   challengerSummary.appendChild(element);
 };
 
+document.querySelector('.right-column').addEventListener('click', function(e) {
+  if (event.target.className === 'fas fa-times-circle') {
+    event.target.parentNode.parentNode.remove();
+  }
+});
 
 function realTime(start, end) {
   var time = (end - start) / 1000;
   return time;
 };
 
-
 function evaluateGuess1(user1GuessNum) {
-// debugger;
   if (user1GuessNum === "") {
     guess1Feedback.innerText = "please enter a guess";
   } else if (user1GuessNum == randomNumber) {
     guess1Feedback.innerText = "BOOM!";
     resetMinMax();
     endTime = new Date;
-    addWinnerCard();
+    addWinnerCard(user1NameField.value);
   } else if (user1GuessNum > randomNumber && user1GuessNum <= maxEntry.value) {
     guess1Feedback.innerText = "that's too high";
   } else if (user1GuessNum < minEntry.value || user1GuessNum > maxEntry.value){ 
     guess1Feedback.innerText = "that's outside of the range, try again.";
-    user1Guess.innerText = "";
+    user1Guess.innerText = "???";
   } else if (user1GuessNum < randomNumber && user1GuessNum >= minEntry.value) {
     guess1Feedback.innerText = "that's too low";
   }};
@@ -201,12 +208,12 @@ function evaluateGuess2(user2GuessNum) {
     guess2Feedback.innerText = "BOOM!";
     resetMinMax();
     endTime = new Date;
-    addWinnerCard();
+    addWinnerCard(user2NameField.value);
   } else if (user2GuessNum > randomNumber && user2GuessNum <= maxEntry.value) {
     guess2Feedback.innerText = "that's too high";
   } else if (user2GuessNum < minEntry.value || user2GuessNum > maxEntry.value) { 
     guess2Feedback.innerText = "that's outside of the range, try again";
-    user2Guess.innerText = "";
+    user2Guess.innerText = "???";
   } else if (user2GuessNum < randomNumber && user2GuessNum >= minEntry.value) {
     guess2Feedback.innerText = "that's too low";
   }};
