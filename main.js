@@ -179,34 +179,34 @@ function realTime(start, end) {
 function evaluateGuess1(user1GuessNum) {
 // debugger;
   if (user1GuessNum === "") {
-    guess1Feedback.innerText = "Please enter a guess!";
+    guess1Feedback.innerText = "please enter a guess";
   } else if (user1GuessNum == randomNumber) {
-    guess1Feedback.innerText = "BOOM, you got it!";
+    guess1Feedback.innerText = "BOOM!";
     resetMinMax();
     endTime = new Date;
     addWinnerCard();
   } else if (user1GuessNum > randomNumber && user1GuessNum <= maxEntry.value) {
-    guess1Feedback.innerText = "Sorry, that is too high.";
+    guess1Feedback.innerText = "that's too high";
   } else if (user1GuessNum < minEntry.value || user1GuessNum > maxEntry.value){ 
-    guess1Feedback.innerText = "Sorry, that is outside of the range, try again.";
+    guess1Feedback.innerText = "that's outside of the range, try again.";
     user1Guess.innerText = "";
   } else if (user1GuessNum < randomNumber && user1GuessNum >= minEntry.value) {
-    guess1Feedback.innerText = "Sorry that is too low.";
+    guess1Feedback.innerText = "that's too low";
   }};
 
 function evaluateGuess2(user2GuessNum) {
   if (user2GuessNum === "") {
-    guess2Feedback.innerText = "Please enter a guess!";
+    guess2Feedback.innerText = "please enter a guess";
   } else if (user2GuessNum == randomNumber) {
-    guess2Feedback.innerText = "BOOM, you got it!";
+    guess2Feedback.innerText = "BOOM!";
     resetMinMax();
     endTime = new Date;
     addWinnerCard();
   } else if (user2GuessNum > randomNumber && user2GuessNum <= maxEntry.value) {
-    guess2Feedback.innerText = "Sorry, that is too high.";
+    guess2Feedback.innerText = "that's too high";
   } else if (user2GuessNum < minEntry.value || user2GuessNum > maxEntry.value) { 
-    guess2Feedback.innerText = "Sorry, that is outside of the range, try again.";
+    guess2Feedback.innerText = "that's outside of the range, try again";
     user2Guess.innerText = "";
   } else if (user2GuessNum < randomNumber && user2GuessNum >= minEntry.value) {
-    guess2Feedback.innerText = "Sorry that is too low.";
+    guess2Feedback.innerText = "that's too low";
   }};

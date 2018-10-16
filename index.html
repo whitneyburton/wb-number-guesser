@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Number Guesser Doubles</title>
+  <title>Number Guesser Doubles 2</title>
   <link rel="stylesheet" type="text/css" href="styles.css">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,700" rel="stylesheet">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
@@ -15,7 +15,11 @@
 <!-- left column -->
 <section class="left-column">
   <section class='flex-section'>
-    <h1 class="thicker">NUMBER</h1>
+    <nav>
+      <h1 class="thicker">NUMBER</h1>
+      <p class = "ultimate-title">ULTIMATE CHALLENGER EDITION</p>
+    </nav>
+
 
 <!-- min/max range -->
   <form>
@@ -27,7 +31,7 @@
     <p>Max Range</p>
     <input type="number" id="max-range">
     </div>
-    <input type="submit" value="Update" class="update-range">
+    <input type="submit" value="UPDATE" class="update-range">
     <br>
     <p class="min-error-message"></p>
     <p class = "max-error-message"></p>
@@ -45,7 +49,7 @@
     <p class="max-entry"></p>
 
     <!-- Challenger inputs -->
-    <p>Challenger 1</p>
+    <p class = 'challenger1-text'>Challenger 1</p>
    
 
      <div class = "challenger-name">
@@ -57,7 +61,7 @@
         <input type="number" id="user1-guess">
       </div>
 
-      <p>Challenger 2</p>
+      <p class = "challenger2-text">Challenger 2</p>
     <div class = "challenger-name">
         <p>Name</p>
         <input type="text" id="user2-name">
@@ -70,10 +74,10 @@
       class="submit-guess-button" type="submit">
         SUBMIT GUESS</button>
     <br> <!-- gotta fix this! -->
-    <input class="clear" type="reset" value="CLEAR">
+    <input class="clear" type="reset" value="CLEAR GAME">
 
     <button class="reset" type="submit">
-        RESET</button>
+        RESET GAME</button>
 </section>
 <!-- submit guess -->
    <!-- <label for="submit-guess-input">
@@ -82,9 +86,9 @@
       id="submit-guess-input" 
       type="number"> -->
     <article class='challenger-latest-score'>
-      <p>Latest Score</p>
-      <p class= "name1"></p>
-      <p>Current Guess</p>
+      <p class = 'latest-score-text'>Latest Score</p>
+      <p class = "name1"></p>
+      <p class = "current-guess-text">Current Guess</p>
       <p class = "user1-num-returned"></p>
       <h4 class="guess1-feedback"></h4>
     </article>

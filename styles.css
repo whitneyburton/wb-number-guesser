@@ -14,10 +14,24 @@ hr {
   display: flex;
   flex-direction: row;
 }
+
+nav {
+ /*put stuff here*/
+ }
+
+ .ultimate-title {
+  /*uncomment below after we make 
+  nav bar*/
+   /*color: #FFFFFF;*/
+  text-align: center;
+}
+
+
 section {
   align-content: center;  
   height: 100%;
 }
+
 
 .flex-section {
   display: flex;
@@ -35,6 +49,10 @@ h1, .number-returned {
   text-align: center;
   display: inline;
 }
+h4 {
+  font-weight: lighter;
+}
+
 p, label {
   color: #6E6E6E;
 }
@@ -110,6 +128,20 @@ input, .min-range-section, .max-range-section {
   display: inline-block;
 }
 
+.current-guess-text {
+  /*make columns out of current guess
+  areas?*/
+}
+.user1-num-returned, .user2-num-returned {
+  color: #F74D9B;
+  font-size: 50px;
+  font-weight: bold;
+}
+.latest-score-text, .challenger1-text, 
+.challenger2-text, .name1, .name2 {
+  font-weight: bold;
+}
+
 /* right column */
 .right-column {
   background-color: #404041;
@@ -138,7 +170,7 @@ button, .reset, .clear {
   border-radius: 20px;
   display: block;
   position: absolute;
-  width: 250px;
+  width: 125px;
   padding: 5px;
   margin: 10px;
 }
@@ -148,7 +180,7 @@ button, .reset, .clear {
   border-radius: 20px;
   position: sticky;
   margin: 30px auto;
-  width: 135px;
+  width: 110px;
 }
 
 .clear:disabled {
@@ -160,7 +192,7 @@ button, .reset, .clear {
   background-color: #6E6E6E;
   border-radius: 20px;
   margin: 45px;
-  width: 135px;
+  width: 110px;
 }
 
 .reset:disabled {
@@ -170,7 +202,8 @@ button, .reset, .clear {
 .update-range {
   background-color: #6E6E6E;
   border-radius: 20px;
-  width: 100px;
+  width: 80px;
+  height: 25px;
   color: #FFFFFF;
   font-weight: bold;
 }
