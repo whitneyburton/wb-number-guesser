@@ -123,13 +123,13 @@ function rightSideTextClear() {
 };
 
 function submitGuess() {
+  ++counter;
   user1Guess.innerText = user1GuessNum.value;
   user2Guess.innerText = user2GuessNum.value;
   evaluateGuess1(parseInt(user1GuessNum.value));
   evaluateGuess2(parseInt(user2GuessNum.value));
   updateName1(user1NameField.value);
   updateName2(user2NameField.value);
-  ++counter;
 };
 
 function updateName1(user1NameField) {
