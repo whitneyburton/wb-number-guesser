@@ -172,8 +172,8 @@ function addWinnerCard(winner) {
 };
 
 document.querySelector('.right-column').addEventListener('click', function(e) {
-  if (event.target.className === 'fas fa-times-circle') {
-    event.target.parentNode.parentNode.remove();
+  if (e.target.className === 'fas fa-times-circle') {
+    e.target.parentNode.parentNode.remove();
   }
 });
 
