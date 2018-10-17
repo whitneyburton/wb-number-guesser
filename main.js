@@ -31,7 +31,6 @@ submitButton.addEventListener('submit', function(e) {
   }
 });
 
-
 updateButton.addEventListener('click', function(e) {
   e.preventDefault();
   min = parseInt(document.querySelector("#min-range").value);
@@ -76,16 +75,15 @@ user2GuessNum.addEventListener('keyup', function() {
 
 
 function submitButtonListener(e) {
-    e.preventDefault();
-  if (checkInputNotEmpty()) {
-  } else {
+  e.preventDefault();
+  checkInputNotEmpty(); 
     if (isFirstRound) {
     startTime = new Date;
     isFirstRound = false;
-    }
+    };
     submitGuess();
   }
-};
+;
 
 function checkInputNotEmpty() {
   if (minEntry.value === "") {
@@ -157,15 +155,15 @@ function addWinnerCard(winner) {
   element.className = 'winner-stats';
   element.innerHTML = 
     `<div> 
-        <p class = 'challenger1-text'> ${(user1NameField.value).toUpperCase()} <span class = 'vs'>VS.</span> ${(user2NameField.value).toUpperCase()} </p> 
+        <p class = 'card-players-text'> ${(user1NameField.value).toUpperCase()} <span class = 'vs'>VS.</span> ${(user2NameField.value).toUpperCase()} </p> 
         <hr> 
       </div> 
       <div> 
-        <p> ${winner.toUpperCase()} </p> 
-        <p>Winner</p> 
+        <p class = 'large-winner-text'> ${winner.toUpperCase()} </p> 
+        <p class = 'large-winner-text'>Winner</p> 
         <hr> 
       </div> 
-      <div> 
+      <div class = 'counter-time-and-delete'> 
         <p class = 'number-of-guesses'>${counter} Guesses</p> 
         <p class = 'time-to-win'> ${realTime(startTime, endTime)} </p> 
         <i class="fas fa-times-circle"></i> 
