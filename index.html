@@ -4,25 +4,28 @@
   <title>Number Guesser Doubles 2</title>
   <link rel="stylesheet" type="text/css" href="styles.css">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,700" rel="stylesheet">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
-
-
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
-<body>
-<div class="wrapper">
 
-<!-- left column -->
-<section class="left-column">
-  <section class='flex-section'>
+<body>
+<!-- nav -->
     <nav>
       <h1 class="thicker">NUMBER</h1>
-      <p class = "ultimate-title">ULTIMATE CHALLENGER EDITION</p>
+      <p class = "ultimate-title"> 
+        -------- ULTIMATE CHALLENGER EDITION --------</p>
     </nav>
 
+<!-- left column -->
+<div class="wrapper">
+<section class="left-column">
+<section class='flex-section'>
 
 <!-- min/max range -->
   <form>
+  <div class = 'set-range-box'>
+    <p class = 'challenger1-text'>Set Range</p>
     <div class="min-range-section">
       <p>Min Range</p>
      <input type="number" id="min-range">
@@ -35,12 +38,11 @@
     <br>
     <p class="min-error-message"></p>
     <p class = "max-error-message"></p>
-
-<!-- horizonal rule -->
-  <hr>
+  </div>
 
 <!-- min/max inputs -->
 <section class = "challenger-left-side">
+  <div class = 'player-box'>
   <div class="current-range">
     <p>The current range is 
     <span class="min-entry">1</span> to 
@@ -70,30 +72,37 @@
         <p>Guess</p>
         <input type="number" id="user2-guess">
       </div>
+
+    <div class = 'all-buttons'>
     <button 
       class="submit-guess-button" type="submit">
         SUBMIT GUESS</button>
-    <br> <!-- gotta fix this! -->
     <input class="clear" type="reset" value="CLEAR GAME">
 
     <button class="reset" type="submit">
         RESET GAME</button>
+      </div>
+
+  </div>
 </section>
 
-    <article class='challenger-latest-score'>
-      <p class = 'latest-score-text'>Latest Score</p>
+<div class = 'score-box'>
+    <p class = 'latest-score-text'>Latest Score</p>
+      <article class='challenger-latest-score'>
       <p class = "name1">Challenger 1 Name</p>
-      <p class = "current-guess-text">Current Guess</p>
-      <p class = "user1-num-returned">???</p>
+      <p class = "current-guess-text">current guess</p>
+      <p class = "user1-num-returned">?</p>
       <h4 class="guess1-feedback"></h4>
     </article>
-
+      <vl id="vl">
+      </vl>
     <article class='challenger-latest-score'>
       <p class="name2">Challenger 2 Name</p>
-      <p>Current Guess</p>
-      <p class="user2-num-returned">???</p>
+      <p>current guess</p>
+      <p class="user2-num-returned">?</p>
       <h4 class="guess2-feedback"></h4>
     </article>
+</div>
 
   </form>
   </section>

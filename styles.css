@@ -3,41 +3,34 @@
   padding: 0px;
   font-family: Open Sans;
 }
+
 body, html, .wrapper {
   height: 100%;
 }
-hr {
-  margin: 5px;
-  color: #404041;
-}
+
 .wrapper {
   display: flex;
   flex-direction: row;
 }
 
 nav {
- /*put stuff here*/
- }
-
- .ultimate-title {
-  /*uncomment below after we make 
-  nav bar*/
-   /*color: #FFFFFF;*/
   text-align: center;
+  width: 100%;
+  background-color: #404041; 
 }
 
-
-section {
-  align-content: center;  
-  height: 100%;
+.ultimate-title {
+  color: #FFFFFF;
+  padding-bottom: 15px;
+  font-size: 22px;
 }
 
 
 .flex-section {
+  align-items: center;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  align-items: center;
 
 }
 
@@ -45,9 +38,9 @@ section {
 
 h1, .number-returned {
   color: #DD1972;
+  display: inline;
   padding: 10px;
   text-align: center;
-  display: inline;
 }
 h4 {
   font-weight: lighter;
@@ -55,15 +48,22 @@ h4 {
 
 p, label {
   color: #6E6E6E;
+  font-weight: 300;
 }
 .min-entry, .max-entry {
   color: #6E6E6E;
   font-weight: bold;
   text-decoration: underline;
 }
-#min-range, #max-range {
+
+#user1-guess, #user2-guess {
   height: 30px;
   width: 190px;
+}
+
+#user1-name, #user2-name {
+  height: 30px;
+  width: 275px;
 }
 
 /*highlight field if no input
@@ -94,9 +94,9 @@ p, label {
   font-size: 70px;
 }
 h2 {
-color: #FFFFFF;
-font-weight: lighter;
-font-size: 50px;
+  color: #FFFFFF;
+  font-weight: lighter;
+  font-size: 50px;
 }
 
 h3 {
@@ -105,11 +105,39 @@ h3 {
 
 /* left column */
 .left-column {
+  height: 100%;
   width: 100%;
-  align-items: center;
   background-color: #F7F7F7;
-  padding: 20px;
 }
+
+.set-range-box {
+  background-color: #FFFFFF;
+  border: 2px #D0D2D3 solid;
+  margin: 15px 10px 10px 10px;
+  padding: 5px 15px;
+}
+
+.player-box {
+  background-color: #FFFFFF;
+  padding: 18px;
+  border: 2px #D0D2D3 solid;
+  margin: 10px;
+}
+
+.score-box {
+  background-color: #FFFFFF;
+  padding: 10px;
+  border: 2px #D0D2D3 solid;
+  margin: 10px;
+}
+#vl {
+  height: 94px;
+  display: inline-block;
+  border-left: 2px solid #D0D2D3;
+}
+
+}
+
 .clear, .reset {
   font-weight: bold;
 }
@@ -125,29 +153,38 @@ input, .min-range-section, .max-range-section {
 
 .challenger-latest-score {
   display: inline-block;
+  text-align: center;
+  padding: 0px 55px;
+  text-align: center;
 }
 
-.current-guess-text {
-  /*make columns out of current guess
-  areas?*/
-}
 .user1-num-returned, .user2-num-returned {
   color: #F74D9B;
   font-size: 50px;
   font-weight: bold;
 }
-.latest-score-text, .challenger1-text, 
-.challenger2-text, .name1, .name2 {
+.latest-score-text, .challenger1-text, .challenger2-text {
   font-weight: bold;
+  text-align: left;
+  padding: 5px 0px;
 }
-
+.name1, .name2 {
+  font-weight: bold;
+  font-size: 14px;
+}
+.card-players-text {
+  font-weight: bold;
+  text-align: left;
+  padding: 5px 0px;
+}
 .vs {
   font-weight: lighter;
 }
 
 /* right column */
 .right-column {
-  background-color: #404041;
+  background-color: grey;
+  height: 100%;
   width: 100%;
   text-align: center;
   padding: 20px;
@@ -156,65 +193,89 @@ input, .min-range-section, .max-range-section {
 .winner-stats {
   height: auto;
   width: 530px;
-  background-color: lightgrey;
+  background-color: #FFF;
   padding: 5px;
   margin: 5px;
 }
 
+hr {
+  margin: 3px;
+  border-color: 2px solid #F7F7F7;
+  display: inline-block;
+  width: 90%;
+}
+
 /* player win cards */
-.number-of-guesses, .time-to-win, .fa-times-circle {
+p.number-of-guesses, .time-to-win, .fa-times-circle {
   display: inline-block;
 }
 
-/*buttons*/
+div.counter-time-and-delete {
+  margin: auto;
+}
 
+/* buttons */
 button, .reset, .clear {
   color: #FFFFFF;
   font-weight: bold;
   display: inline-block;
 }
 
+.all-buttons {
+  display: flex;
+}
+
+.update-range {
+  background-color: #6E6E6E;
+  border-radius: 20px;
+  width: 90px;
+  height: 30px;
+  color: #FFFFFF;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+#min-range, #max-range {
+  height: 30px;
+  width: 185px;
+}
+
 .submit-guess-button {
   background-color: #6E6E6E;
   border-radius: 20px;
-  display: block;
-  position: absolute;
-  width: 125px;
-  padding: 5px;
+  width: 33%;
+  height: 30px;
   margin: 10px;
+  font-size: 14px;
 }
 
 .clear {
   background-color: #6E6E6E;
   border-radius: 20px;
   position: sticky;
-  margin: 30px auto;
-  width: 110px;
+  margin: 10px;
+  height: 30px;
+  width: 33%;
+  font-size: 14px;
 }
 
 .clear:disabled {
   background-color: #D0D2D3;
 }
 
-
 .reset {
   background-color: #6E6E6E;
   border-radius: 20px;
-  margin: 45px;
-  width: 110px;
+  margin: 10px;
+  height: 30px;
+  width: 33%;
+  font-size: 14px;
 }
 
 .reset:disabled {
   background-color: #D0D2D3;
 }
 
-.update-range {
-  background-color: #6E6E6E;
-  border-radius: 20px;
-  width: 80px;
-  height: 25px;
-  color: #FFFFFF;
-  font-weight: bold;
-}
+
 
 
