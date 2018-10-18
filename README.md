@@ -8,6 +8,7 @@ We built a game where a 2 users can guess a number between 1-100, with the abili
 # Week 1
 ##### Comp Photo 
 <img width="774" alt="screen shot 2018-10-17 at 5 59 50 pm" src="https://user-images.githubusercontent.com/40863560/47124836-46f37b00-d23d-11e8-9d4a-12a3845049f0.png">
+
 ##### Our Site
 
 <img width="774" alt="screen shot 2018-10-17 at 5 59 50 pm" src="https://user-images.githubusercontent.com/40863560/47124841-4ce95c00-d23d-11e8-9a73-55a1e92028b0.png">
