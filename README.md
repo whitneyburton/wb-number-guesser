@@ -20,4 +20,5 @@ We built a game where a 2 users can guess a number between 1-100, with the abili
 <img width="779" alt="screen shot 2018-10-17 at 6 04 31 pm" src="https://user-images.githubusercontent.com/40863560/47125016-50311780-d23e-11e8-908e-6ae2df058db0.png">
 
 ##### Our Site
-<!-- ![photo of my dog party](dog-party1.png) -->
+
+![screen shot 2018-10-17 at 6 56 44 pm](https://user-images.githubusercontent.com/40863560/47125066-8bcbe180-d23e-11e8-9b16-27d45b3629e0.png)
