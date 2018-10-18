@@ -1,20 +1,20 @@
 * {
+  font-family: Open Sans;
   margin: 0px;
   padding: 0px;
-  font-family: Open Sans;
 }
 .wrapper {
   display: flex;
 }
 nav {
+  background-color: #404041; 
   text-align: center;
   width: 100%;
-  background-color: #404041; 
 }
 .ultimate-title {
   color: #FFFFFF;
-  padding-bottom: 15px;
   font-size: 22px;
+  padding-bottom: 15px;
 }
 .flex-section {
   align-items: center;
@@ -43,8 +43,8 @@ p, label {
 }
 .line {
   border-bottom: 2px solid #FFF;
-  width: 122px;
   margin: 0px 15px 28px 15px;
+  width: 122px;
 }
 .min-entry, .max-entry {
   color: #6E6E6E;
@@ -64,27 +64,27 @@ p, label {
   width: 400px;
 }
 .min-error-message, .max-error-message {
-  display: inline-block;
   color: #DD1972;
+  display: inline-block;
   padding-right: 45px;
 }
 .thicker {
-  font-weight: 700;
   font-size: 70px;
+  font-weight: 700;
 }
 .thicker::after {
   content: 'GUESSER';
-  font-weight: 300;
   font-size: 70px;
+  font-weight: 300;
 }
 .number-returned {
-  font-weight: 700;
   font-size: 70px;
+  font-weight: 700;
 }
 h2 {
   color: #FFFFFF;
-  font-weight: lighter;
   font-size: 50px;
+  font-weight: lighter;
 }
 h3 {
   color: #DD1972;
@@ -92,8 +92,8 @@ h3 {
 
 /* left column */
 .left-column {
-  width: 100%;
   background-color: #F7F7F7;
+  width: 100%;
 }
 .set-range-box {
   background-color: #FFFFFF;
@@ -103,20 +103,20 @@ h3 {
 }
 .player-box {
   background-color: #FFFFFF;
-  padding: 18px;
   border: 2px #D0D2D3 solid;
   margin: 10px;
+  padding: 18px;
 }
 .score-box {
   background-color: #FFFFFF;
-  padding: 10px;
   border: 2px #D0D2D3 solid;
   margin: 10px;
+  padding: 10px;
 }
 #vl {
-  height: 94px;
-  display: inline-block;
   border-left: 2px solid #D0D2D3;
+  display: inline-block;
+  height: 94px;
 }
 .clear, .reset {
   font-weight: bold;
@@ -130,8 +130,8 @@ input, .min-range-section, .max-range-section {
 }
 .challenger-latest-score {
   display: inline-block;
-  text-align: center;
   padding: 0px 55px;
+  text-align: center;
   text-align: center;
 }
 .user1-num-returned, .user2-num-returned {
@@ -141,17 +141,17 @@ input, .min-range-section, .max-range-section {
 }
 .latest-score-text, .challenger1-text, .challenger2-text {
   font-weight: bold;
-  text-align: left;
   padding: 5px 0px;
+  text-align: left;
 }
 .name1, .name2 {
-  font-weight: bold;
   font-size: 14px;
+  font-weight: bold;
 }
 .card-players-text {
   font-weight: bold;
-  text-align: center;
   padding: 8px;
+  text-align: center;
 }
 .vs {
   font-weight: lighter;
@@ -160,18 +160,18 @@ input, .min-range-section, .max-range-section {
 /* right column */
 .right-column {
   background-color: #D1D2D4;
-  width: 100%;
-  text-align: center;
-  padding: 20px;
   border-left: 2px solid #B4B4B4;
+  padding: 20px;
+  text-align: center;
+  width: 100%;
 }
 .winner-stats {
-  height: auto;
-  width: 530px;
   background-color: #FFF;
-  padding: 5px;
-  margin: 5px;
   border: 2px solid #B4B4B4;
+  height: auto;
+  margin: 5px;
+  padding: 5px;
+  width: 530px;
 }
 .large-winner-text-bold {
   font-size: 25px;
@@ -204,8 +204,8 @@ div.counter-time-and-delete {
 /* buttons */
 button, .reset, .clear {
   color: #FFFFFF;
-  font-weight: bold;
   display: inline-block;
+  font-weight: bold;
 }
 .all-buttons {
   display: flex;
@@ -213,11 +213,11 @@ button, .reset, .clear {
 .update-range {
   background-color: #6E6E6E;
   border-radius: 20px;
-  width: 90px;
-  height: 30px;
   color: #FFFFFF;
-  font-weight: bold;
   font-size: 14px;
+  font-weight: bold;
+  height: 30px;
+  width: 90px;
 }
 
 #min-range, #max-range {
@@ -228,20 +228,20 @@ button, .reset, .clear {
 .submit-guess-button {
   background-color: #6E6E6E;
   border-radius: 20px;
-  width: 33%;
+  font-size: 14px;
   height: 30px;
   margin: 10px;
-  font-size: 14px;
+  width: 33%;
 }
 
 .clear {
   background-color: #6E6E6E;
   border-radius: 20px;
-  position: sticky;
-  margin: 10px;
-  height: 30px;
-  width: 33%;
   font-size: 14px;
+  height: 30px;
+  margin: 10px;
+  position: sticky;
+  width: 33%;
 }
 
 .clear:disabled {
@@ -251,10 +251,10 @@ button, .reset, .clear {
 .reset {
   background-color: #6E6E6E;
   border-radius: 20px;
-  margin: 10px;
-  height: 30px;
-  width: 33%;
   font-size: 14px;
+  height: 30px;
+  margin: 10px;
+  width: 33%;
 }
 
 .reset:disabled {
