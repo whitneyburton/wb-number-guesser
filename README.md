@@ -16,6 +16,8 @@ We built a game where a 2 users can guess a number between 1-100, with the abili
 
 # Week 2 
 ##### Comp Photo 
-<!-- ![photo of OG dog party](dog-partyOG.png) -->
+
+<img width="779" alt="screen shot 2018-10-17 at 6 04 31 pm" src="https://user-images.githubusercontent.com/40863560/47125016-50311780-d23e-11e8-908e-6ae2df058db0.png">
+
 ##### Our Site
 <!-- ![photo of my dog party](dog-party1.png) -->
