@@ -1,28 +1,27 @@
-var clearButton =     document.querySelector('.clear');
-var counter =         0;
+var clearButton = document.querySelector('.clear');
+var counter = 0;
 var endTime
-var guess1Feedback =  document.querySelector('.guess1-feedback');
-var guess2Feedback =  document.querySelector('.guess2-feedback');
-var isFirstRound =    true;
-var minEntry =        document.querySelector("#min-range");
-var maxEntry =        document.querySelector("#max-range");
+var guess1Feedback = document.querySelector('.guess1-feedback');
+var guess2Feedback = document.querySelector('.guess2-feedback');
+var isFirstRound = true;
+var minEntry = document.querySelector("#min-range");
+var maxEntry = document.querySelector("#max-range");
 var startTime 
-var submitButton =    document.querySelector('.submit-guess-button');
-var min =             1;
-var max =             100;
-var nameOne =         document.querySelector('.name1');
-var nameTwo =         document.querySelector('.name2');
-var range =           max - min;
-var randomNumber =    generateRandomNumber(range, min);
-var resetButton =     document.querySelector('.reset');
-var updateButton =    document.querySelector('.update-range');
-var user1Guess =      document.querySelector('.user1-num-returned');
-var user2Guess =      document.querySelector('.user2-num-returned')
-var user1GuessNum =   document.querySelector("#user1-guess");
-var user2GuessNum =   document.querySelector("#user2-guess");
-var user1NameField =  document.querySelector('#user1-name');
-var user2NameField =  document.querySelector('#user2-name');
-
+var submitButton = document.querySelector('.submit-guess-button');
+var min = 1;
+var max = 100;
+var nameOne = document.querySelector('.name1');
+var nameTwo = document.querySelector('.name2');
+var range = max - min;
+var randomNumber = generateRandomNumber(range, min);
+var resetButton = document.querySelector('.reset');
+var updateButton = document.querySelector('.update-range');
+var user1Guess = document.querySelector('.user1-num-returned');
+var user2Guess = document.querySelector('.user2-num-returned')
+var user1GuessNum = document.querySelector("#user1-guess");
+var user2GuessNum = document.querySelector("#user2-guess");
+var user1NameField = document.querySelector('#user1-name');
+var user2NameField = document.querySelector('#user2-name');
 
 submitButton.addEventListener('click', submitButtonListener);
 submitButton.addEventListener('submit', function(e) {
@@ -73,7 +72,6 @@ user2GuessNum.addEventListener('keyup', function() {
   }
 });
 
-
 function submitButtonListener(e) {
   e.preventDefault();
   checkInputNotEmpty(); 
@@ -82,8 +80,7 @@ function submitButtonListener(e) {
     isFirstRound = false;
     };
     submitGuess();
-  }
-;
+  };
 
 function checkInputNotEmpty() {
   if (minEntry.value === "") {
@@ -93,7 +90,6 @@ function checkInputNotEmpty() {
     minEntry.style.border= "none";
     document.querySelector('.min-error-message').innerHTML = "";
   }
-
   if (maxEntry.value === "") {
     document.querySelector('.max-error-message').innerHTML = `<i class="fas fa-exclamation-triangle"></i> Enter a max range`;
     maxEntry.style.border= "1px solid #DD1972";
@@ -142,7 +138,7 @@ function checkMinMaxValue() {
   if (minEntry.value > maxEntry.value) {
     document.querySelector('.evaluation-feedback').innerText = 
     "Sorry, your min entry is higher than your max entry, try again";
-  }};
+}};
 
 function resetMinMax() {
   maxEntry.value = ((parseInt(maxEntry.value)) +10);
@@ -159,13 +155,13 @@ function addWinnerCard(winner) {
         <hr> 
       </div> 
       <div> 
-        <p class = 'large-winner-text'> ${winner.toUpperCase()} </p> 
-        <p class = 'large-winner-text'>Winner</p> 
+        <p class = 'large-winner-text-bold'> ${winner.toUpperCase()} </p> 
+        <p class = 'large-winner-text'>WINNER</p> 
         <hr> 
       </div> 
       <div class = 'counter-time-and-delete'> 
-        <p class = 'number-of-guesses'>${counter} Guesses</p> 
-        <p class = 'time-to-win'> ${realTime(startTime, endTime)} </p> 
+        <p class = 'number-of-guesses'><span class = 'seconds'>${counter}</span> GUESSES</p> 
+        <p class = 'time-to-win'> <span class = 'seconds'>${realTime(startTime, endTime)}</span> SECONDS</p> 
         <i class="fas fa-times-circle"></i> 
       </div>`;
   challengerSummary.appendChild(element);
@@ -197,7 +193,7 @@ function evaluateGuess1(user1GuessNum) {
     user1Guess.innerText = "???";
   } else if (user1GuessNum < randomNumber && user1GuessNum >= minEntry.value) {
     guess1Feedback.innerText = "that's too low";
-  }};
+}};
 
 function evaluateGuess2(user2GuessNum) {
   if (user2GuessNum === "") {
