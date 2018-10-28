@@ -85,7 +85,7 @@ function submitButtonListener(e) {
 function checkInputNotEmpty() {
   if (minEntry.value === "") {
     document.querySelector('.min-error-message').innerHTML = `<i class="fas fa-exclamation-triangle"></i> Enter a min range`;
-    minEntry.style.border= "1px solid #DD1972";
+    minEntry.style.border= "1px solid #DD1972";2
   } else {
     minEntry.style.border= "none";
     document.querySelector('.min-error-message').innerHTML = "";
