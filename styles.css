@@ -3,19 +3,23 @@
   margin: 0px;
   padding: 0px;
 }
+
 .wrapper {
   display: flex;
 }
+
 nav {
   background-color: #404041; 
   text-align: center;
   width: 100%;
 }
+
 .ultimate-title {
   color: #FFFFFF;
   font-size: 22px;
   padding-bottom: 15px;
 }
+
 .flex-section {
   align-items: center;
   display: flex;
@@ -24,68 +28,88 @@ nav {
 }
 
 /* fonts */
-h1, .number-returned {
+h1, 
+.number-returned {
   color: #DD1972;
   display: inline;
   padding: 10px;
   text-align: center;
 }
+
 h4 {
   font-weight: lighter;
 }
-p, label {
+
+p, 
+label {
   color: #6E6E6E;
   font-weight: 300;
 }
+
 .ultimate-challenger-edition {
   display: flex;
   justify-content: center;
 }
+
 .line {
   border-bottom: 2px solid #FFF;
   margin: 0px 15px 28px 15px;
   width: 122px;
 }
-.min-entry, .max-entry {
+
+.min-entry, 
+.max-entry {
   color: #6E6E6E;
   font-weight: bold;
   text-decoration: underline;
 }
-#user1-guess, #user2-guess {
+
+#user1-guess,
+#user2-guess {
   height: 30px;
   width: 190px;
 }
-#user1-name, #user2-name {
+
+#user1-name, 
+#user2-name {
   height: 30px;
   width: 275px;
 }
+
 #submit-guess-input {
   height: 30px;
   width: 400px;
 }
-.min-error-message, .max-error-message {
+
+.min-error-message, 
+.max-error-message {
   color: #DD1972;
   display: inline-block;
   padding-right: 45px;
 }
+
 .thicker {
   font-size: 70px;
   font-weight: 700;
 }
+
 .thicker::after {
   content: 'GUESSER';
   font-size: 70px;
   font-weight: 300;
 }
+
 .number-returned {
   font-size: 70px;
   font-weight: 700;
 }
+
 h2 {
   color: #FFFFFF;
   font-size: 50px;
   font-weight: lighter;
 }
+
 h3 {
   color: #DD1972;
 }
@@ -94,65 +118,103 @@ h3 {
 .left-column {
   background-color: #F7F7F7;
   width: 100%;
+  height: -webkit-fill-available;
 }
+
+
 .set-range-box {
   background-color: #FFFFFF;
   border: 2px #D0D2D3 solid;
   margin: 15px 10px 10px 10px;
   padding: 5px 15px;
 }
+
+
 .player-box {
   background-color: #FFFFFF;
   border: 2px #D0D2D3 solid;
   margin: 10px;
   padding: 18px;
 }
+
+
 .score-box {
   background-color: #FFFFFF;
   border: 2px #D0D2D3 solid;
   margin: 10px;
   padding: 10px;
 }
+
+.guess-results {
+  display: flex;
+}
+
+
 #vl {
   border-left: 2px solid #D0D2D3;
   display: inline-block;
   height: 94px;
 }
-.clear, .reset {
+
+
+.clear, 
+.reset {
   font-weight: bold;
 }
-input, .min-range-section, .max-range-section {
+
+
+input, 
+.min-range-section, 
+.max-range-section {
   display: inline-block;
   font-weight: bold;
 }
-.challenger-name, .challenger-guess {
+
+
+.challenger-name, 
+.challenger-guess {
   display: inline-block;
 }
+
+
 .challenger-latest-score {
   display: inline-block;
-  padding: 0px 55px;
-  text-align: center;
+  margin: auto;
   text-align: center;
 }
-.user1-num-returned, .user2-num-returned {
+
+
+.user1-num-returned, 
+.user2-num-returned {
   color: #F74D9B;
   font-size: 50px;
   font-weight: bold;
 }
-.latest-score-text, .challenger1-text, .challenger2-text {
+
+
+.latest-score-text, 
+.challenger1-text, 
+.challenger2-text {
   font-weight: bold;
   padding: 5px 0px;
   text-align: left;
 }
-.name1, .name2 {
+
+
+.name1, 
+.name2 {
   font-size: 14px;
   font-weight: bold;
 }
+
+
 .card-players-text {
   font-weight: bold;
   padding: 8px;
   text-align: center;
 }
+
+
 .vs {
   font-weight: lighter;
 }
@@ -192,9 +254,12 @@ hr {
 }
 
 /* player win cards */
-p.number-of-guesses, .time-to-win, .fa-times-circle {
+p.number-of-guesses, 
+.time-to-win, 
+.fa-times-circle {
   display: inline-block;
 }
+
 div.counter-time-and-delete {
   display: flex;
   justify-content: space-around;
@@ -207,9 +272,11 @@ button, .reset, .clear {
   display: inline-block;
   font-weight: bold;
 }
+
 .all-buttons {
   display: flex;
 }
+
 .update-range {
   background-color: #6E6E6E;
   border-radius: 20px;
@@ -260,7 +327,3 @@ button, .reset, .clear {
 .reset:disabled {
   background-color: #D0D2D3;
 }
-
-
-
-
