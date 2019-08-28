@@ -1,97 +1,114 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Number Guesser Doubles 2</title>
-  <link rel="stylesheet" type="text/css" href="styles.css">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,700" rel="stylesheet">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-</head>
-<body>
-  <nav>
-    <h1 class="thicker">NUMBER</h1>
-      <section class = 'ultimate-challenger-edition'>
-        <div class = 'line'></div>
-        <p class = "ultimate-title">ULTIMATE CHALLENGER EDITION</p>
-        <div class = 'line'></div>
+  <head>
+    <title>Number Guesser Doubles 2</title>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,700"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
+      integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
+      integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
+      crossorigin="anonymous"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body>
+    <nav>
+      <h1 class="thicker">NUMBER</h1>
+      <section class="ultimate-challenger-edition">
+        <div class="line"></div>
+        <p class="ultimate-title">ULTIMATE CHALLENGER EDITION</p>
+        <div class="line"></div>
       </section>
-  </nav>
-  <div class="wrapper">
-  <section class="left-column">
-  <section class='flex-section'>
-    <form>
-      <div class = 'set-range-box'>
-        <p class = 'challenger1-text'>Set Range</p>
-      <div class="min-range-section">
-        <p>Min Range</p>
-       <input type="number" id="min-range">
-      </div>
-      <div class="max-range-section">
-        <p>Max Range</p>
-        <input type="number" id="max-range">
-      </div>
-      <input type="submit" value="UPDATE" class="update-range">
-        <br>
-        <p class="min-error-message"></p>
-        <p class = "max-error-message"></p>
-      </div>
-  <section class = "challenger-left-side">
-    <div class = 'player-box'>
-    <div class="current-range">
-      <p>The current range is <span class="min-entry">1</span> to <span class="max-entry">100</span></p>
+    </nav>
+    <div class="wrapper">
+      <section class="left-column">
+        <section class="flex-section">
+          <form>
+            <div class="set-range-box">
+              <p class="challenger1-text">Set Range</p>
+              <div class="min-range-section">
+                <p>Min Range</p>
+                <input type="number" id="min-range" />
+              </div>
+              <div class="max-range-section">
+                <p>Max Range</p>
+                <input type="number" id="max-range" />
+              </div>
+              <input type="submit" value="UPDATE" class="update-range" />
+              <br />
+              <p class="min-error-message"></p>
+              <p class="max-error-message"></p>
+            </div>
+            <section class="challenger-left-side">
+              <div class="player-box">
+                <div class="current-range">
+                  <p>
+                    The current range is <span class="min-entry">1</span> to
+                    <span class="max-entry">100</span>
+                  </p>
+                </div>
+                <p class="min-entry"></p>
+                <p class="max-entry"></p>
+                <p class="challenger1-text">Challenger 1</p>
+                <div class="challenger-name">
+                  <p>Name</p>
+                  <input type="text" id="user1-name" />
+                </div>
+                <div class="challenger-guess">
+                  <p>Guess</p>
+                  <input type="number" id="user1-guess" />
+                </div>
+                <p class="challenger2-text">Challenger 2</p>
+                <div class="challenger-name">
+                  <p>Name</p>
+                  <input type="text" id="user2-name" />
+                </div>
+                <div class="challenger-guess">
+                  <p>Guess</p>
+                  <input type="number" id="user2-guess" />
+                </div>
+                <div class="all-buttons">
+                  <button class="submit-guess-button" type="submit">
+                    SUBMIT GUESS
+                  </button>
+                  <input class="clear" type="reset" value="CLEAR GAME" />
+                  <button class="reset" type="submit">RESET GAME</button>
+                </div>
+              </div>
+            </section>
+            <div class="score-box">
+              <p class="latest-score-text">Latest Score</p>
+              <article class="challenger-latest-score">
+                <p class="name1">Challenger 1 Name</p>
+                <p class="current-guess-text">current guess</p>
+                <p class="user1-num-returned">?</p>
+                <h4 class="guess1-feedback"></h4>
+              </article>
+              <vl id="vl"></vl>
+              <article class="challenger-latest-score">
+                <p class="name2">Challenger 2 Name</p>
+                <p>current guess</p>
+                <p class="user2-num-returned">?</p>
+                <h4 class="guess2-feedback"></h4>
+              </article>
+            </div>
+          </form>
+        </section>
+      </section>
+      <section class="right-column">
+        <section id="challenger-summary" class="flex-section"></section>
+      </section>
     </div>
-      <p class="min-entry"></p>
-      <p class="max-entry"></p>
-      <p class = 'challenger1-text'>Challenger 1</p>
-    <div class = "challenger-name">
-      <p>Name</p>
-      <input type="text" id="user1-name">
-    </div>
-    <div class = "challenger-guess">
-      <p>Guess</p>
-      <input type="number" id="user1-guess">
-    </div>
-      <p class = "challenger2-text">Challenger 2</p>
-    <div class = "challenger-name">
-      <p>Name</p>
-      <input type="text" id="user2-name">
-    </div>
-    <div class = "challenger-guess">
-      <p>Guess</p>
-      <input type="number" id="user2-guess">
-    </div>
-    <div class = 'all-buttons'>
-      <button class="submit-guess-button" type="submit">SUBMIT GUESS</button>
-      <input class="clear" type="reset" value="CLEAR GAME">
-      <button class="reset" type="submit">RESET GAME</button>
-    </div>
-    </div>
-  </section>
-  <div class = 'score-box'>
-    <p class = 'latest-score-text'>Latest Score</p>
-      <article class='challenger-latest-score'>
-        <p class = "name1">Challenger 1 Name</p>
-        <p class = "current-guess-text">current guess</p>
-        <p class = "user1-num-returned">?</p>
-        <h4 class="guess1-feedback"></h4>
-      </article>
-        <vl id="vl"></vl>
-    <article class='challenger-latest-score'>
-      <p class="name2">Challenger 2 Name</p>
-      <p>current guess</p>
-      <p class="user2-num-returned">?</p>
-      <h4 class="guess2-feedback"></h4>
-    </article>
-  </div>
-  </form>
-  </section>
-</section>
-<section class="right-column">
-  <section id = "challenger-summary" class="flex-section">
-  </section>
-</section>
-</div>
-<script type="text/javascript" src= "main.js"></script>
-</body>
+    <script type="text/javascript" src="main.js"></script>
+  </body>
 </html>
